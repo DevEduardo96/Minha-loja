@@ -18,11 +18,10 @@ const Header: React.FC = () => {
       setCartCount(carrinho.length);
     };
 
-    // Escuta tanto mudanças entre abas (storage) quanto evento local personalizado
     window.addEventListener("storage", atualizarContagem);
     window.addEventListener("carrinhoAtualizado", atualizarContagem);
 
-    atualizarContagem(); // chamada inicial
+    atualizarContagem();
 
     return () => {
       window.removeEventListener("storage", atualizarContagem);
@@ -39,7 +38,6 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="header">
-        {/* Desktop layout */}
         <div className="header-desktop">
           <div className="logo">
             <img src={logo} alt="Logo" />
@@ -66,7 +64,6 @@ const Header: React.FC = () => {
               {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
             </div>
 
-            {/* Mobile menu toggle */}
             <button className="menu-toggle" onClick={toggleMenu}>
               <FaBars size={24} />
             </button>
@@ -74,7 +71,6 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
       <div className={`side-menu ${menuOpen ? "open" : ""}`}>
         <button className="close-btn" onClick={closeMenu}>
           <IoClose size={28} />
@@ -101,7 +97,9 @@ const Header: React.FC = () => {
           <button className="close-btn" onClick={closeCart}>
             <IoClose size={28} />
           </button>
-          <CarrinhoLateral />
+
+          {/* ✅ CarrinhoLateral com botão de voltar funcional */}
+          <CarrinhoLateral onFechar={closeCart} />
         </div>
       )}
     </>

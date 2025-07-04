@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./css/CarrinhoLateral.css";
 import CheckoutButton from "./CheckoutButton";
 
-const CarrinhoLateral: React.FC = () => {
+interface CarrinhoLateralProps {
+  onFechar: () => void;
+}
+
+const CarrinhoLateral: React.FC<CarrinhoLateralProps> = ({ onFechar }) => {
   const [carrinho, setCarrinho] = useState<any[]>([]);
 
   useEffect(() => {
@@ -24,14 +28,18 @@ const CarrinhoLateral: React.FC = () => {
     const novoCarrinho = carrinho.filter((item) => item.id !== id);
     localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
     setCarrinho(novoCarrinho);
-
-    // Atualiza ícone do carrinho no header
     window.dispatchEvent(new Event("carrinhoAtualizado"));
   };
 
   return (
     <div className="carrinho-lateral">
+      {/* ✅ Botão de fechar o carrinho */}
+      <button className="voltar-carrinho" onClick={onFechar}>
+        ← Voltar
+      </button>
+
       <h2>Meu Carrinho</h2>
+
       {carrinho.length === 0 ? (
         <p>Seu carrinho está vazio.</p>
       ) : (
@@ -56,6 +64,7 @@ const CarrinhoLateral: React.FC = () => {
               </div>
             ))}
           </div>
+
           <div className="resumo">
             <p>Subtotal: R$ {subtotal.toFixed(2)}</p>
             <p>Desconto: -R$ {desconto.toFixed(2)}</p>
