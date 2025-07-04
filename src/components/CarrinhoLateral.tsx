@@ -1,0 +1,75 @@
+import React, { useEffect, useState } from "react";
+import "./css/CarrinhoLateral.css";
+import CheckoutButton from "./CheckoutButton";
+
+const CarrinhoLateral: React.FC = () => {
+  const [carrinho, setCarrinho] = useState<any[]>([]);
+
+  useEffect(() => {
+    const dados = JSON.parse(localStorage.getItem("carrinho") || "[]");
+    setCarrinho(dados);
+  }, []);
+
+  const subtotal = carrinho.reduce((acc, item) => {
+    const preco = parseFloat(
+      item.preco.replace("R$", "").replace(".", "").replace(",", ".")
+    );
+    return acc + preco;
+  }, 0);
+
+  const desconto = subtotal * 0.15; // 15% de desconto
+  const total = subtotal - desconto;
+
+  const removerItem = (id: number) => {
+    const novoCarrinho = carrinho.filter((item) => item.id !== id);
+    localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
+    setCarrinho(novoCarrinho);
+
+    // Atualiza ícone do carrinho no header
+    window.dispatchEvent(new Event("carrinhoAtualizado"));
+  };
+
+  return (
+    <div className="carrinho-lateral">
+      <h2>Meu Carrinho</h2>
+      {carrinho.length === 0 ? (
+        <p>Seu carrinho está vazio.</p>
+      ) : (
+        <>
+          <div className="produtos-carrinho">
+            {carrinho.map((item, index) => (
+              <div className="item-carrinho" key={`${item.id}-${index}`}>
+                {item.imagem && <img src={item.imagem} alt={item.nome} />}
+                <div className="info-carrinho">
+                  <h4>{item.nome}</h4>
+                  <p>{item.descricao}</p>
+                  <p>
+                    <strong>{item.preco}</strong>
+                  </p>
+                  <button
+                    className="remover"
+                    onClick={() => removerItem(item.id)}
+                  >
+                    Remover
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="resumo">
+            <p>Subtotal: R$ {subtotal.toFixed(2)}</p>
+            <p>Desconto: -R$ {desconto.toFixed(2)}</p>
+            <h3>Total: R$ {total.toFixed(2)}</h3>
+            <CheckoutButton
+              carrinho={carrinho}
+              total={total}
+              nomeCliente="Kuchila"
+            />
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default CarrinhoLateral;

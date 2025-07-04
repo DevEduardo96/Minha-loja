@@ -1,0 +1,87 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+  font-size: 2rem;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  align-items: stretch; /* Garante que todos os itens tenham a mesma altura */
+}
+.produto {
+  background: var(--preto);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui conteúdo para manter altura uniforme */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* necessário com align-items: stretch */
+  min-height: 350px; /* opcional para garantir uma base mínima */
+}
+
+.produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.produto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.produto h2 {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin: 1rem 1rem 0.5rem;
+  min-height: 48px; /* força altura igual mesmo com textos curtos */
+}
+
+.produto p {
+  margin: 0 1rem 0.5rem;
+  color: #aaa;
+  font-size: 0.95rem;
+  min-height: 48px; /* mantém altura consistente nos parágrafos */
+}
+
+.produto .preco {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--verde);
+  margin: 0 1rem 1rem;
+}
+
+.link-produto {
+  margin: 0 1rem 1rem;
+  padding: 0.6rem 1rem;
+  background-color: rgb(94, 94, 94);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* empurra o botão para a parte inferior */
+}
+
+.link-produto:hover {
+  background-color: #218838;
+}

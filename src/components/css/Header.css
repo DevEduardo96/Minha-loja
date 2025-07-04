@@ -1,0 +1,163 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+}
+
+.header {
+  background-color: var(--preto);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 555;
+  padding: 0.8rem 1.5rem;
+}
+
+/* Layout desktop */
+.header-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  height: 3.5rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--verde);
+}
+
+.search-box {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+}
+
+.cart-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-icon {
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-icon:hover {
+  color: var(--verde);
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: var(--verde);
+  color: var(--preto);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile Drawer */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100vh;
+  background-color: var(--preto);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1rem;
+  z-index: 1001;
+  transition: left 0.3s ease-in-out;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.side-menu a:hover {
+  color: var(--verde);
+}
+
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .search-box {
+    margin: 0.5rem 0;
+  }
+}

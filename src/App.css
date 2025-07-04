@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  background-image: url("./assets/background/295.jpg");
+  background-size: cover;
+}
+.container {
+  margin: 0 auto;
+  padding: 10px; /* menor distância interna */
+  max-width: 100%; /* ocupa toda a largura */
+}
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  body {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    background-image: url("./assets/background/295.jpg");
+    background-size: cover;
+  }
+}

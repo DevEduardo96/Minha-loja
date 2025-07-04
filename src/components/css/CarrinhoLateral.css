@@ -1,0 +1,81 @@
+.cart-side-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+  padding: 1rem;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 400px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.carrinho-lateral h2 {
+  margin-bottom: 1rem;
+}
+
+.produtos-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.item-carrinho {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-carrinho {
+  flex: 1;
+}
+
+.remover {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remover:hover {
+  background-color: red;
+  color: white;
+}
+
+.item-carrinho img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.resumo {
+  margin-top: 1.5rem;
+}
+
+.finalizar {
+  width: 100%;
+  padding: 0.75rem;
+  background: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}

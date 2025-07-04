@@ -1,0 +1,41 @@
+.temporizador {
+  background-color: #121212;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px rgba(189, 227, 24, 0.3);
+  border: 2px solid #bde318;
+  margin-bottom: 1rem;
+}
+
+.temporizador .titulo {
+  color: #bde318;
+  letter-spacing: 1px;
+}
+
+.temporizador .contador {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.temporizador .contador.finalizado {
+  color: #ff4d4d;
+  font-weight: 800;
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,36 @@
+.container {
+  padding: 1rem;
+}
+
+.lista-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item-carrinho {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.botao-comprar {
+  background-color: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.limpar {
+  margin-top: 1rem;
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
