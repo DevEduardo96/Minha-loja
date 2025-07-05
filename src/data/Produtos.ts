@@ -4,7 +4,7 @@ export const produtos: Produto[] = [
   {
     id: 1,
     nome: "E-book: Como Vender no Instagram",
-    preco: "R$ 29,90",
+    preco: "R$ 0,20",
     descricao: "Guia completo para ganhar dinheiro com redes sociais.",
     linkPix: "https://pix.exemplo.com/pagar?id=1",
   },
