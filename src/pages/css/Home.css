@@ -82,6 +82,10 @@ h1 {
   margin-top: auto; /* empurra o botão para a parte inferior */
 }
 
-.link-produto:hover {
-  background-color: #218838;
+.produto:hover {
+  background-color: #1f1f1f;
+}
+
+.produto button {
+  background-color: var(--verde);
 }

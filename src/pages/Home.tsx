@@ -34,7 +34,7 @@ const Home: React.FC = () => {
               <strong>{produto.preco}</strong>
             </p>
             <button onClick={() => adicionarAoCarrinho(produto)}>
-              Adicionar ao Carrinho
+              Adquirir
             </button>
           </div>
         ))}
