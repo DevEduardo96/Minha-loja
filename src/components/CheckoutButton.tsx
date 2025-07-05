@@ -20,8 +20,6 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [pagamentoAprovado, setPagamentoAprovado] = useState<boolean>(false);
 
-  // 🔐 E-mail de teste válido para o token usado
-
   const gerarPagamento = async () => {
     if (!nomeCliente.trim() || total <= 0) {
       alert("Preencha o nome e adicione itens ao carrinho.");
@@ -47,35 +45,6 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
       setQrCode(qr_code);
       setTicketUrl(ticket_url);
 
-      // ✅ AQUI: abrir QR Code em nova janela
-      const popup = window.open("", "Pagamento Pix", "width=500,height=600");
-      if (popup) {
-        popup.document.write(`
-          <html>
-            <head>
-              <title>Pagamento Pix</title>
-              <style>
-                body { font-family: sans-serif; padding: 20px; text-align: center; }
-                img { max-width: 100%; margin-top: 20px; }
-                textarea { width: 100%; margin-top: 10px; font-size: 16px; }
-                a { display: inline-block; margin-top: 10px; color: blue; }
-                button { margin-top: 10px; padding: 10px 20px; }
-              </style>
-            </head>
-            <body>
-              <h2>Status: ${status}</h2>
-              <img src="data:image/png;base64,${qr_code_base64}" alt="QR Code Pix" />
-              <p><strong>Código Pix:</strong></p>
-              <textarea readonly rows="4">${qr_code}</textarea>
-              <br/>
-              <button onclick="navigator.clipboard.writeText('${qr_code}'); alert('Código copiado!')">Copiar Código</button>
-              <p><a href="${ticket_url}" target="_blank">Abrir no app bancário</a></p>
-            </body>
-          </html>
-        `);
-        popup.document.close();
-      }
-
       verificarStatus(id);
     } catch (erro: any) {
       const mensagem =
@@ -94,7 +63,7 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
     const interval = setInterval(async () => {
       try {
         const res = await axios.get(
-          `https://servidor-loja-digital.onrender.com/criar-pagamento/${id}`
+          `https://servidor-loja-digital.onrender.com/status-pagamento/${id}`
         );
         const novoStatus = res.data.status;
         setStatus(novoStatus);
@@ -135,16 +104,13 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
             alt="QR Code para pagamento Pix"
             className="qr-image"
           />
-
           <textarea
             value={qrCode}
             readOnly
             rows={4}
             style={{ width: "100%", marginTop: "10px" }}
           />
-
           <button onClick={copiarCodigoPix}>Copiar código Pix</button>
-
           {ticketUrl && (
             <p style={{ marginTop: 10 }}>
               <a href={ticketUrl} target="_blank" rel="noreferrer">
