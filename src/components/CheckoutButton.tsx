@@ -32,7 +32,7 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
 
     try {
       const resposta = await axios.post(
-        "http://localhost:3001/criar-pagamento",
+        "https://servidor-loja-digital.onrender.com/criar-pagamento",
         {
           carrinho,
           nomeCliente,
@@ -94,7 +94,7 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
     const interval = setInterval(async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3001/status-pagamento/${id}`
+          `https://servidor-loja-digital.onrender.com/criar-pagamento/${id}`
         );
         const novoStatus = res.data.status;
         setStatus(novoStatus);

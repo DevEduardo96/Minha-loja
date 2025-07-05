@@ -13,7 +13,7 @@ const PagamentoPix: React.FC = () => {
 
     try {
       const resposta = await axios.post(
-        "http://localhost:3001/criar-pagamento",
+        "https://servidor-loja-digital.onrender.com/criar-pagamento",
         {
           nomeCliente: "Kuchila",
           total: "R$ 25,41",
