@@ -19,6 +19,7 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
   const [status, setStatus] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [pagamentoAprovado, setPagamentoAprovado] = useState<boolean>(false);
+  const [linkDownload, setLinkDownload] = useState<string>("");
 
   const gerarPagamento = async () => {
     if (!nomeCliente.trim() || total <= 0) {
@@ -74,6 +75,16 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
           alert("✅ Pagamento aprovado! Produto liberado.");
           localStorage.removeItem("carrinho");
           window.dispatchEvent(new Event("carrinhoAtualizado"));
+
+          // 🔽 Buscar o link de download
+          try {
+            const downloadRes = await axios.get(
+              `https://servidor-loja-digital.onrender.com/link-download/${id}`
+            );
+            setLinkDownload(downloadRes.data.link);
+          } catch (e) {
+            console.error("Erro ao buscar link de download:", e);
+          }
         }
       } catch (err) {
         console.error("Erro ao verificar status:", err);
@@ -124,7 +135,21 @@ const CheckoutButton: React.FC<CheckoutProps> = ({
       {pagamentoAprovado && (
         <div className="sucesso-pagamento">
           <h3>✅ Pagamento aprovado!</h3>
-          <p>Você receberá seu produto em breve.</p>
+          <p>Seu produto está pronto para download:</p>
+
+          {linkDownload ? (
+            <a
+              href={linkDownload}
+              download
+              target="_blank"
+              rel="noreferrer"
+              className="botao-download"
+            >
+              📥 Baixar produto
+            </a>
+          ) : (
+            <p>Gerando link de download...</p>
+          )}
         </div>
       )}
     </div>
