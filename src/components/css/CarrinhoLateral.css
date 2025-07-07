@@ -9,13 +9,24 @@
   top: 0;
   width: 400px;
   height: 100vh;
-  background: var(--preto);
-  color: #bde318;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 200;
+  background: rgba(255, 255, 255, 0.884);
+  border: solid 3px var(--preto);
+  color: var(--preto);
+  box-shadow: -2px 0 10px rgba(255, 255, 255, 0.1);
+  font-family: "Bebas Neue", sans-serif;
   padding: 1rem;
   overflow-y: auto;
   z-index: 999;
+}
+
+.cart-side-menu h2 {
+  text-align: center;
+  background-color: var(--verde);
+  border-radius: 20px;
+}
+
+.cart-side-menu p {
+  text-align: center;
 }
 
 .overlay {
@@ -45,6 +56,10 @@
   gap: 1rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid #ddd;
+}
+
+.cart-side-menu h2 {
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .info-carrinho {
@@ -101,4 +116,17 @@
 
 .voltar-carrinho:hover {
   text-decoration: underline;
+}
+
+/* div do Botão gerar pix */
+.resumo {
+  text-align: center;
+  padding-bottom: 10px;
+}
+/* mensagem da geração do qr code */
+.important {
+  background-color: #121212d5;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
 }

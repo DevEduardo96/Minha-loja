@@ -1,5 +1,10 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+  --vermelho: rgb(255, 72, 0);
+}
 .categorias-menu {
-  background-color: var(--verde);
+  background-color: var(--preto);
   padding: 0 1rem;
   overflow-x: auto; /* para rolagem horizontal em telas pequenas */
 }
@@ -16,8 +21,8 @@
 }
 
 .categorias-menu li a {
-  color: var(--preto);
-  text-decoration: none;
+  color: white;
+  text-decoration: none !important;
   font-weight: 600;
   font-size: 0.875rem;
   display: flex;
@@ -29,6 +34,7 @@
 
 .categorias-menu li a:hover {
   text-decoration: underline;
+  color: var(--verde);
 }
 
 .seta {

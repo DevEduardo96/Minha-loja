@@ -75,6 +75,12 @@ const CarrinhoLateral: React.FC<CarrinhoLateralProps> = ({ onFechar }) => {
               nomeCliente="Kuchila"
             />
           </div>
+          <div className="important">
+            <p>
+              🔄 Se o QR Code não carregar imediatamente, por favor, aguarde ⏳
+              e atualize a página após alguns minutos.
+            </p>
+          </div>
         </>
       )}
     </div>

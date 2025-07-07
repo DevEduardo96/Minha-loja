@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import "./css/Header.css";
-import logo from "../assets/logo3.png";
+import logo from "../assets/logo2.png";
 import CarrinhoLateral from "./CarrinhoLateral";
 
 const Header: React.FC = () => {
@@ -44,10 +44,10 @@ const Header: React.FC = () => {
           </div>
 
           <nav className="nav-links">
-            <a href="/">Home</a>
-            <a href="/produtos">Produtos</a>
-            <a href="/contato">Contato</a>
-            <a href="/sobre">Sobre</a>
+            <a href="/">HOME</a>
+            <a href="/produtos">PRODUTOS</a>
+            <a href="/contato">CONTATOS</a>
+            <a href="/sobre">SOBRE</a>
           </nav>
 
           <div className="search-box">
@@ -75,18 +75,28 @@ const Header: React.FC = () => {
         <button className="close-btn" onClick={closeMenu}>
           <IoClose size={28} />
         </button>
-        <a href="/" onClick={closeMenu}>
-          Home
-        </a>
-        <a href="/produtos" onClick={closeMenu}>
-          Produtos
-        </a>
-        <a href="/contato" onClick={closeMenu}>
-          Contato
-        </a>
-        <a href="/sobre" onClick={closeMenu}>
-          Sobre
-        </a>
+        <div className="list-menu">
+          {" "}
+          <a href="/" onClick={closeMenu}>
+            Home
+          </a>
+        </div>
+
+        <div className="list-menu">
+          <a href="/produtos" onClick={closeMenu}>
+            Produtos
+          </a>
+        </div>
+        <div className="list-menu">
+          <a href="/sobre" onClick={closeMenu}>
+            Sobre
+          </a>
+        </div>
+        <div className="list-menu">
+          <a href="/produtos" onClick={closeMenu}>
+            Contato
+          </a>
+        </div>
       </div>
 
       {menuOpen && <div className="overlay" onClick={closeMenu} />}

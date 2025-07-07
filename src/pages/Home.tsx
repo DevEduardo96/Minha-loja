@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Categorias from "../components/Categorias";
 import Slider from "../components/Slider";
 import Temporizador from "../components/Temporizador";
+import HeroSection from "../components/HeroSection";
 
 const Home: React.FC = () => {
   const adicionarAoCarrinho = (produto: any) => {
@@ -22,7 +23,9 @@ const Home: React.FC = () => {
   return (
     <div className="container">
       <Header />
+      <HeroSection />
       <Categorias />
+
       <Slider />
       <Temporizador />
       <div className="produtos">
