@@ -13,6 +13,7 @@ const Slider: React.FC = () => {
       className="carousel slide"
       data-bs-ride="carousel"
       data-bs-interval="3000"
+      data-bs-wrap="true" // ESSA LINHA FAZ O SLIDER DAR LOOP
     >
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -37,26 +38,6 @@ const Slider: React.FC = () => {
           />
         </div>
       </div>
-
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#slider"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
-        <span className="visually-hidden">Anterior</span>
-      </button>
-
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#slider"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true" />
-        <span className="visually-hidden">Próximo</span>
-      </button>
     </div>
   );
 };

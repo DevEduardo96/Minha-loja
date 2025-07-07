@@ -6,12 +6,13 @@ const HeroSection: React.FC = () => {
   return (
     <section className="hero-container">
       <div className="hero-text">
-        <h1>
-          Customized <br /> Printed Tees
-        </h1>
+        <h1>Deseja Alavancar Seus Resultados</h1>
         <p>
-          Nam at congue diam etiam erat lectus, finibus eget commodo quis,
-          congue diam etiam erat lectus.
+          Reunimos especialistas de diversos nichos para criar os melhores
+          conteúdos digitais em um só lugar. Aqui você encontra e-books,
+          templates, guias práticos e materiais prontos para usar, desenvolvidos
+          para quem quer aprender mais, ganhar tempo ou transformar conhecimento
+          em renda. Escolha seu pack ideal e comece hoje mesmo!
         </p>
         <a href="#loja" className="hero-button">
           EXPLORE STORE <span className="arrow">»</span>

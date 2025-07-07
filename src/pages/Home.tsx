@@ -1,4 +1,3 @@
-// Home.tsx
 import React from "react";
 import { produtos } from "../data/Produtos";
 import "./css/Home.css";
@@ -25,17 +24,25 @@ const Home: React.FC = () => {
       <Header />
       <HeroSection />
       <Categorias />
-
       <Slider />
       <Temporizador />
+
       <div className="produtos">
         {produtos.map((produto) => (
           <div key={produto.id} className="produto">
+            {/* Se quiser exibir imagem no futuro */}
+            {/* {produto.imagem && <img src={produto.imagem} alt={produto.nome} />} */}
+
             <h2>{produto.nome}</h2>
             <p>{produto.descricao}</p>
-            <p>
-              <strong>{produto.preco}</strong>
-            </p>
+
+            <div className="preco-container">
+              {produto.precoAntigo && (
+                <span className="preco-antigo">{produto.precoAntigo}</span>
+              )}
+              <span className="preco-novo">{produto.preco}</span>
+            </div>
+
             <button onClick={() => adicionarAoCarrinho(produto)}>
               Adquirir
             </button>

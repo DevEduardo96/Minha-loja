@@ -1,7 +1,9 @@
 export interface Produto {
   id: number;
   nome: string;
-  preco: string;
   descricao: string;
+  preco: string;
+  precoAntigo?: string; // ← novo campo opcional
   linkPix: string;
+  imagem?: string; // caso queira usar imagens também
 }
