@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
           em renda. Escolha seu pack ideal e comece hoje mesmo!
         </p>
         <a href="#loja" className="hero-button">
-          EXPLORE STORE <span className="arrow">»</span>
+          EXPLORAR <span className="arrow">»</span>
         </a>
       </div>
       <div className="hero-image">

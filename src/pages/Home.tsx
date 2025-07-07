@@ -34,6 +34,7 @@ const Home: React.FC = () => {
             {/* {produto.imagem && <img src={produto.imagem} alt={produto.nome} />} */}
 
             <h2>{produto.nome}</h2>
+            <img src={produto.imagem} alt={produto.nome} />
             <p>{produto.descricao}</p>
 
             <div className="preco-container">
