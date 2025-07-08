@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./css/CarrinhoLateral.css";
 import CheckoutButton from "./CheckoutButton";
-import CartVazio from "../assets/carrinho-vazio.png";
 
 interface CarrinhoLateralProps {
   onFechar: () => void;
