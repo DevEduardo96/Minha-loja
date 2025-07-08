@@ -16,6 +16,7 @@ h1 {
   color: #222;
   font-size: 2rem;
 }
+
 .produtos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -66,7 +67,6 @@ h1 {
   text-align: center;
 }
 
-/* Preço promocional */
 .preco-container {
   display: flex;
   justify-content: center;
@@ -122,19 +122,57 @@ h1 {
   background-color: #000;
 }
 
-/* Responsivo para mobile */
+/* ==== RESPONSIVIDADE ADICIONAL ==== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    padding: 1rem;
+  }
+  .produto {
+    min-height: 340px;
+  }
+}
+
+/* Celulares maiores (ex: iPhones 13+) */
+@media (max-width: 600px) {
+  .produtos {
+    gap: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .produto {
+    min-height: 300px;
+  }
+}
+
+/* Celulares pequenos (ex: Galaxy A01) */
 @media (max-width: 430px) {
   .produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1rem;
   }
+
   .produto {
     min-height: 280px;
   }
 
   .container {
-    padding: 5px !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.8rem;
+  }
+
+  .produto h2 {
+    font-size: 1rem;
+  }
+
+  .produto p {
+    font-size: 0.9rem;
+  }
+
+  .preco-novo {
+    font-size: 1rem;
   }
 }

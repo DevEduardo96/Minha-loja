@@ -3,6 +3,7 @@
   --preto: #121212;
   --vermelho: rgb(255, 72, 0);
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
 .header {
@@ -14,16 +15,15 @@
   top: 0;
   z-index: 555;
   padding: 0rem 1.5rem;
-  font-style: normal;
 }
+
 .header a {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 20px;
+  text-decoration: none;
 }
 
-/* Layout desktop */
 .header-desktop {
   display: flex;
   align-items: center;
@@ -45,12 +45,9 @@
 }
 
 .nav-links a {
-  color: #000000;
-  text-decoration: none;
+  color: #000;
   font-size: 20px;
   transition: color 0.3s ease;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .nav-links a:hover {
@@ -71,7 +68,7 @@
   font-size: 1rem;
   font-family: "Bebas Neue", sans-serif;
   background-color: #b9b8b8;
-  color: rgb(0, 0, 0);
+  color: #000;
 }
 
 .cart-menu {
@@ -106,7 +103,7 @@
   display: none;
 }
 
-/* Mobile Drawer */
+/* Side menu (mobile) */
 .side-menu {
   position: fixed;
   top: 0;
@@ -120,31 +117,20 @@
   gap: 1rem;
   z-index: 1001;
   transition: left 0.3s ease-in-out;
-  font-style: normal;
-}
-.list-menu {
-  background-color: #bde318;
-  align-items: center;
-  text-align: center;
-  border-radius: 20px;
 }
 
 .side-menu.open {
   left: 0;
 }
-/* o X no menu lateral */
-.close-btn {
-  color: #000000 !important;
-}
-/* o nome VOLTAR do menu lateral*/
-.voltar-carrinho {
-  display: none;
+
+.list-menu {
+  background-color: var(--verde);
+  text-align: center;
+  border-radius: 20px;
 }
 
 .side-menu a {
   color: var(--preto);
-
-  text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -157,7 +143,7 @@
   align-self: flex-end;
   background: none;
   border: none;
-  color: white;
+  color: #000 !important;
   margin-bottom: 1rem;
   cursor: pointer;
 }
@@ -172,112 +158,47 @@
   z-index: 1000;
 }
 
-/* Responsivo para mobile */
+.voltar-carrinho {
+  display: none;
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 768px) {
+  .header {
+    height: 5rem;
+    position: relative;
+  }
+
+  .logo img {
+    height: 5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .search-box input {
+    width: 180px;
+    margin-top: -15px;
+    margin-left: -60px;
+    background-color: #cfcece;
+    position: absolute;
+  }
+}
+
 @media (max-width: 430px) {
-  .header {
-    height: 5rem;
-  }
-  .logo img {
-    height: 5rem;
-    object-fit: contain;
-    cursor: pointer;
-  }
   .search-box input {
-    width: 20vh;
-    position: absolute;
-    margin-top: -20px;
-    margin-left: -68px;
-    background-color: #cfcece;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .header {
-    position: relative;
+    width: 150px;
+    margin-left: -55px;
   }
 }
 
-@media (max-width: 760px) {
-  .header {
-    height: 5rem;
-  }
-  .logo img {
-    height: 5rem;
-    object-fit: contain;
-    cursor: pointer;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .header {
-    position: relative;
-  }
-}
-
-@media (max-width: 394px) {
-  .header {
-    height: 5rem;
-  }
-  .logo img {
-    height: 5rem;
-    object-fit: contain;
-    cursor: pointer;
-  }
+@media (max-width: 360px) {
   .search-box input {
-    width: 18vh;
-    position: absolute;
-    margin-top: -20px;
-    margin-left: -68px;
-    background-color: #cfcece;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .header {
-    position: relative;
-  }
-}
-
-@media (max-width: 394px) {
-  .header {
-    height: 5rem;
-  }
-  .logo img {
-    height: 5rem;
-    object-fit: contain;
-    cursor: pointer;
-  }
-  .search-box input {
-    width: 16vh;
-    position: absolute;
-    margin-top: -20px;
-    margin-left: -68px;
-    background-color: #cfcece;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .header {
-    position: relative;
+    width: 130px;
   }
 }
