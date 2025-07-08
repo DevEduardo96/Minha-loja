@@ -54,7 +54,7 @@ export const produtos: Produto[] = [
     linkPix: "https://pix.exemplo.com/pagar?id=6",
   },
   {
-    id: 6,
+    id: 7,
     nome: "Novo Produto 7",
     imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
@@ -63,7 +63,7 @@ export const produtos: Produto[] = [
     linkPix: "https://pix.exemplo.com/pagar?id=6",
   },
   {
-    id: 6,
+    id: 8,
     nome: "Novo Produto 8",
     imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
