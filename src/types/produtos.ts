@@ -6,4 +6,5 @@ export interface Produto {
   precoAntigo?: string; // ← novo campo opcional
   linkPix: string;
   imagem?: string; // caso queira usar imagens também
+  categoria: string; // ← adicionado aqui
 }

@@ -4,6 +4,7 @@ import { IoClose } from "react-icons/io5";
 import "./css/Header.css";
 import logo from "../assets/logo2.webp";
 import CarrinhoLateral from "./CarrinhoLateral";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [cartCount, setCartCount] = useState(
@@ -44,10 +45,10 @@ const Header: React.FC = () => {
           </div>
 
           <nav className="nav-links">
-            <a href="/">HOME</a>
-            <a href="/produtos">PRODUTOS</a>
-            <a href="/contato">CONTATOS</a>
-            <a href="/sobre">SOBRE</a>
+            <Link to="/">HOME</Link>
+            <Link to="/produtos">PRODUTOS</Link>
+            <Link to="/contato">CONTATO</Link>
+            <Link to="/sobre">SOBRE</Link>
           </nav>
 
           <div className="search-box">
@@ -88,9 +89,9 @@ const Header: React.FC = () => {
           </a>
         </div>
         <div className="list-menu">
-          <a href="/sobre" onClick={closeMenu}>
+          <Link to="/sobre" onClick={closeMenu}>
             Sobre
-          </a>
+          </Link>
         </div>
         <div className="list-menu">
           <a href="/produtos" onClick={closeMenu}>

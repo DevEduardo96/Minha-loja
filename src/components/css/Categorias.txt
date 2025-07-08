@@ -8,6 +8,7 @@
   background-color: black;
   padding: 1rem;
   overflow-x: auto; /* para rolagem horizontal em telas pequenas */
+  justify-content: center; /* ← centraliza os botões */
 }
 
 .categorias-menu ul {
@@ -19,6 +20,7 @@
   align-items: center;
   height: 40px;
   white-space: nowrap; /* evita quebra nas palavras */
+  justify-content: center !important; /* ← centraliza os botões */
 }
 
 .categorias-menu li a {

@@ -5,14 +5,18 @@ import Produto from "./pages/Produtos";
 import "./App.css";
 import Carrinho from "./pages/Carrinho";
 import PagamentoPix from "./components/PagamentoPix";
+import Sobre from "./pages/Sobre";
+import Contatos from "./pages/Contatos";
 
 const App: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/produto/:id" element={<Produto />} />
+      <Route path="/produtos/" element={<Produto />} />
       <Route path="/carrinho" element={<Carrinho />} />
       <Route path="/pagamento" element={<PagamentoPix />} />
+      <Route path="/sobre" element={<Sobre />} />
+      <Route path="/contato" element={<Contatos />} />
     </Routes>
   );
 };

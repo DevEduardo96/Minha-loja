@@ -1,28 +1,96 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 import { produtos } from "../data/Produtos";
-import "./css/Produtos.css";
+import "./css/Home.css";
+import Header from "../components/Header";
+import Slider from "../components/Slider";
+import Temporizador from "../components/Temporizador";
 
-const Produto: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const produto = produtos.find((p) => p.id === Number(id));
+const categorias = ["todos", "ebooks", "templates", "cursos"];
 
-  if (!produto) {
-    return <p>Produto não encontrado.</p>;
-  }
+const Produtos: React.FC = () => {
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("todos");
+
+  const adicionarAoCarrinho = (produto: any) => {
+    const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho") || "[]");
+    const novoCarrinho = [...carrinhoAtual, produto];
+    localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
+
+    window.dispatchEvent(new Event("carrinhoAtualizado"));
+    alert(`${produto.nome} foi adicionado ao carrinho!`);
+  };
+
+  const produtosFiltrados = produtos.filter((produto) =>
+    categoriaSelecionada === "todos"
+      ? true
+      : produto.categoria === categoriaSelecionada
+  );
 
   return (
-    <div className="produto-container">
-      <h1>{produto.nome}</h1>
-      <p>{produto.descricao}</p>
-      <p>
-        <strong>{produto.preco}</strong>
-      </p>
-      <a href={produto.linkPix} target="_blank" rel="noreferrer">
-        <button className="botao-comprar">Comprar via Pix</button>
-      </a>
+    <div className="container">
+      <Header />
+      <Slider />
+
+      {/* Seção de Categorias */}
+      <div
+        className="categorias-menu"
+        style={{
+          display: "flex",
+          gap: "0.5rem",
+          flexWrap: "nowrap",
+          overflowX: "auto",
+          padding: "1rem",
+          margin: "1.5rem 0",
+          justifyContent: "center",
+          backgroundColor: "#121212",
+        }}
+      >
+        {categorias.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setCategoriaSelecionada(cat)}
+            style={{
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+              padding: "0.5rem 1rem",
+              borderRadius: "20px",
+              border: "none",
+              backgroundColor:
+                categoriaSelecionada === cat ? "#bde318" : "#333",
+              color: categoriaSelecionada === cat ? "#121212" : "#fff",
+              cursor: "pointer",
+              fontWeight: "bold",
+              fontSize: "0.9rem",
+            }}
+          >
+            {cat.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
+      <Temporizador />
+
+      <div className="produtos">
+        {produtosFiltrados.map((produto) => (
+          <div key={produto.id} className="produto">
+            <h2>{produto.nome}</h2>
+            <img src={produto.imagem} alt={produto.nome} />
+            <p>{produto.descricao}</p>
+
+            <div className="preco-container">
+              {produto.precoAntigo && (
+                <span className="preco-antigo">{produto.precoAntigo}</span>
+              )}
+              <span className="preco-novo">{produto.preco}</span>
+            </div>
+
+            <button onClick={() => adicionarAoCarrinho(produto)}>
+              Adquirir
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Produto;
+export default Produtos;

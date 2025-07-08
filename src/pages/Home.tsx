@@ -1,38 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import { produtos } from "../data/Produtos";
 import "./css/Home.css";
 import Header from "../components/Header";
-import Categorias from "../components/Categorias";
-import Slider from "../components/Slider";
 import Temporizador from "../components/Temporizador";
 import HeroSection from "../components/HeroSection";
 
+const categorias = ["todos", "ebooks", "templates", "cursos"];
+
 const Home: React.FC = () => {
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("todos");
+
   const adicionarAoCarrinho = (produto: any) => {
     const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho") || "[]");
     const novoCarrinho = [...carrinhoAtual, produto];
     localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
 
-    // 🔔 Dispara evento personalizado para atualizar o Header
     window.dispatchEvent(new Event("carrinhoAtualizado"));
-
     alert(`${produto.nome} foi adicionado ao carrinho!`);
   };
+
+  const produtosFiltrados = produtos.filter((produto) =>
+    categoriaSelecionada === "todos"
+      ? true
+      : produto.categoria === categoriaSelecionada
+  );
 
   return (
     <div className="container">
       <Header />
       <HeroSection />
-      <Categorias />
-      <Slider />
+
+      {/* Seção de Categorias */}
+      <div
+        className="categorias-menu"
+        style={{
+          display: "flex",
+          gap: "0.5rem",
+          flexWrap: "nowrap",
+          overflowX: "auto",
+          padding: "1rem",
+          margin: "1.5rem 0",
+          justifyContent: "center",
+          backgroundColor: "#121212",
+        }}
+      >
+        {categorias.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setCategoriaSelecionada(cat)}
+            style={{
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+              padding: "0.5rem 1rem",
+              borderRadius: "20px",
+              border: "none",
+              backgroundColor:
+                categoriaSelecionada === cat ? "#bde318" : "#333",
+              color: categoriaSelecionada === cat ? "#121212" : "#fff",
+              cursor: "pointer",
+              fontWeight: "bold",
+              fontSize: "0.9rem",
+            }}
+          >
+            {cat.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
       <Temporizador />
 
+      {/* Lista de Produtos */}
       <div className="produtos">
-        {produtos.map((produto) => (
+        {produtosFiltrados.map((produto) => (
           <div key={produto.id} className="produto">
-            {/* Se quiser exibir imagem no futuro */}
-            {/* {produto.imagem && <img src={produto.imagem} alt={produto.nome} />} */}
-
             <h2>{produto.nome}</h2>
             <img src={produto.imagem} alt={produto.nome} />
             <p>{produto.descricao}</p>
@@ -45,7 +85,7 @@ const Home: React.FC = () => {
             </div>
 
             <button onClick={() => adicionarAoCarrinho(produto)}>
-              Adquirir
+              ADQUIRIR
             </button>
           </div>
         ))}

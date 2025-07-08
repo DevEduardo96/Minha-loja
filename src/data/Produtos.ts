@@ -9,6 +9,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 9,90",
     descricao: "Guia completo para ganhar dinheiro com redes sociais.",
     linkPix: "https://pix.exemplo.com/pagar?id=1",
+    categoria: "ebooks",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 49,90",
     descricao: "50 templates prontos para usar no Instagram.",
     linkPix: "https://pix.exemplo.com/pagar?id=2",
+    categoria: "templates",
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ export const produtos: Produto[] = [
     preco: "R$ 39,90",
     descricao: "Descrição do produto 3.",
     linkPix: "https://pix.exemplo.com/pagar?id=3",
+    categoria: "cursos",
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 69,90",
     descricao: "Descrição do produto 4.",
     linkPix: "https://pix.exemplo.com/pagar?id=4",
+    categoria: "ebooks",
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const produtos: Produto[] = [
     preco: "R$ 49,90",
     descricao: "Descrição do produto 5.",
     linkPix: "https://pix.exemplo.com/pagar?id=5",
+    categoria: "templates",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=6",
+    categoria: "cursos",
   },
   {
     id: 7,
@@ -60,7 +66,8 @@ export const produtos: Produto[] = [
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
-    linkPix: "https://pix.exemplo.com/pagar?id=6",
+    linkPix: "https://pix.exemplo.com/pagar?id=7",
+    categoria: "ebooks",
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ export const produtos: Produto[] = [
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
-    linkPix: "https://pix.exemplo.com/pagar?id=6",
+    linkPix: "https://pix.exemplo.com/pagar?id=8",
+    categoria: "cursos",
   },
 ];
