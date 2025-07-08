@@ -35,7 +35,6 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #fff;
   height: 100%;
-  min-height: 380px;
 }
 
 .produto:hover {
@@ -46,24 +45,24 @@ h1 {
 
 .produto img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0.5rem;
 }
 
 .produto h2 {
   font-size: 1.2rem;
   color: #121212;
   text-align: center;
-  margin: 1rem 1rem 0.5rem;
-  min-height: 48px;
+  margin: 0.5rem 1rem;
 }
 
 .produto p {
-  margin: 0 1rem 0.5rem;
+  margin: 0.5rem 1rem;
   color: #333;
   font-size: 0.95rem;
-  min-height: 48px;
   text-align: center;
 }
 
@@ -72,7 +71,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
-  margin: 0.5rem 1rem 1rem;
+  margin: 0.5rem 1rem;
   flex-wrap: wrap;
 }
 
@@ -122,19 +121,16 @@ h1 {
   background-color: #000;
 }
 
-/* ==== RESPONSIVIDADE ADICIONAL ==== */
+/* ==== RESPONSIVIDADE AJUSTADA ==== */
 
 /* Tablets */
 @media (max-width: 900px) {
   .container {
     padding: 1rem;
   }
-  .produto {
-    min-height: 340px;
-  }
 }
 
-/* Celulares maiores (ex: iPhones 13+) */
+/* Celulares maiores */
 @media (max-width: 600px) {
   .produtos {
     gap: 1.5rem;
@@ -144,28 +140,8 @@ h1 {
     font-size: 1.6rem;
   }
 
-  .produto {
-    min-height: 300px;
-  }
-}
-
-/* Celulares pequenos (ex: Galaxy A01) */
-@media (max-width: 430px) {
-  .produtos {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-  }
-
-  .produto {
-    min-height: 280px;
-  }
-
-  .container {
-    padding: 0.8rem;
-  }
-
   .produto h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .produto p {
@@ -174,5 +150,38 @@ h1 {
 
   .preco-novo {
     font-size: 1rem;
+  }
+}
+
+/* Celulares pequenos (FORÇA 2 COLUNAS) */
+@media (max-width: 430px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr); /* ← força 2 colunas */
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 0.8rem;
+  }
+
+  .produto {
+    min-height: auto;
+  }
+
+  .produto h2 {
+    font-size: 1rem;
+  }
+
+  .produto p {
+    font-size: 0.85rem;
+  }
+
+  .preco-novo {
+    font-size: 0.95rem;
+  }
+
+  .produto button {
+    font-size: 18px;
+    padding: 0.4rem 0.8rem;
   }
 }
