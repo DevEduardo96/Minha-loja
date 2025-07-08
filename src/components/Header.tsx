@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import "./css/Header.css";
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo2.webp";
 import CarrinhoLateral from "./CarrinhoLateral";
 
 const Header: React.FC = () => {

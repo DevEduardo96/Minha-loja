@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/HeroSection.css";
-import modeloImg from "../assets/modelo.png"; // ajuste o caminho conforme necessário
+import modeloImg from "../assets/modelo.webp"; // ajuste o caminho conforme necessário
 
 const HeroSection: React.FC = () => {
   return (

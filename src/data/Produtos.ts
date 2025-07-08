@@ -4,7 +4,7 @@ export const produtos: Produto[] = [
   {
     id: 1,
     nome: "Novo Produto 1",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 0,20",
     precoAntigo: "R$ 9,90",
     descricao: "Guia completo para ganhar dinheiro com redes sociais.",
@@ -13,7 +13,7 @@ export const produtos: Produto[] = [
   {
     id: 2,
     nome: "Novo Produto 2",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 19,90",
     precoAntigo: "R$ 49,90",
     descricao: "50 templates prontos para usar no Instagram.",
@@ -22,7 +22,7 @@ export const produtos: Produto[] = [
   {
     id: 3,
     nome: "Novo Produto 3",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 39,90",
     descricao: "Descrição do produto 3.",
     linkPix: "https://pix.exemplo.com/pagar?id=3",
@@ -30,7 +30,7 @@ export const produtos: Produto[] = [
   {
     id: 4,
     nome: "Novo Produto 4",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
     precoAntigo: "R$ 69,90",
     descricao: "Descrição do produto 4.",
@@ -39,7 +39,7 @@ export const produtos: Produto[] = [
   {
     id: 5,
     nome: "Novo Produto 5",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
     descricao: "Descrição do produto 5.",
     linkPix: "https://pix.exemplo.com/pagar?id=5",
@@ -47,7 +47,7 @@ export const produtos: Produto[] = [
   {
     id: 6,
     nome: "Novo Produto 6",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
@@ -56,7 +56,7 @@ export const produtos: Produto[] = [
   {
     id: 6,
     nome: "Novo Produto 7",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
@@ -65,7 +65,7 @@ export const produtos: Produto[] = [
   {
     id: 6,
     nome: "Novo Produto 8",
-    imagem: "./produtos-img/pasta.jpg",
+    imagem: "./produtos-img/pasta.webp",
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",

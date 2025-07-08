@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./css/CarrinhoLateral.css";
 import CheckoutButton from "./CheckoutButton";
+import CartVazio from "../assets/carrinho-vazio.png";
 
 interface CarrinhoLateralProps {
   onFechar: () => void;
@@ -34,11 +35,13 @@ const CarrinhoLateral: React.FC<CarrinhoLateralProps> = ({ onFechar }) => {
   return (
     <div className="carrinho-lateral">
       {/* ✅ Botão de fechar o carrinho */}
-      <button className="voltar-carrinho" onClick={onFechar}>
-        ← Voltar
-      </button>
+      <>
+        <button className="voltar-carrinho" onClick={onFechar}>
+          ← Voltar
+        </button>
 
-      <h2>Meu Carrinho</h2>
+        <h2>Meu Carrinho</h2>
+      </>
 
       {carrinho.length === 0 ? (
         <p>Seu carrinho está vazio.</p>
