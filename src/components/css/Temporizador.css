@@ -39,3 +39,35 @@
     opacity: 0.3;
   }
 }
+
+/* Responsivo para mobile */
+@media (max-width: 430px) {
+  .temporizador {
+    padding: 10px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(189, 227, 24, 0.3);
+    border: 2px solid #bde318;
+  }
+}
+
+/* Responsivo para mobile */
+@media (max-width: 394px) {
+  .temporizador {
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    box-shadow: 0 0 10px rgba(189, 227, 24, 0.3);
+    border: 2px solid #bde318;
+  }
+}

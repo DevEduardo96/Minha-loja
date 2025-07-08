@@ -42,10 +42,3 @@
   font-size: 0.75rem;
   line-height: 1;
 }
-
-/* Responsividade */
-@media (max-width: 560px) {
-  .categorias-menu ul {
-    display: none;
-  }
-}

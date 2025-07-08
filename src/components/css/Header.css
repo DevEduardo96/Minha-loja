@@ -110,8 +110,8 @@
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 220px;
+  left: -100%;
+  width: 100%;
   height: 100vh;
   background: rgba(255, 255, 255, 0.884);
   display: flex;
@@ -173,7 +173,22 @@
 }
 
 /* Responsivo para mobile */
-@media (max-width: 768px) {
+@media (max-width: 430px) {
+  .header {
+    height: 5rem;
+  }
+  .logo img {
+    height: 5rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .search-box input {
+    width: 20vh;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -68px;
+    background-color: #cfcece;
+  }
   .nav-links {
     display: none;
   }
@@ -182,9 +197,86 @@
     display: block;
   }
 
-  .search-box {
-    margin: 0.5rem 0;
+  .header {
+    position: relative;
   }
+}
+
+@media (max-width: 760px) {
+  .header {
+    height: 5rem;
+  }
+  .logo img {
+    height: 5rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header {
+    position: relative;
+  }
+}
+
+@media (max-width: 394px) {
+  .header {
+    height: 5rem;
+  }
+  .logo img {
+    height: 5rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .search-box input {
+    width: 18vh;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -68px;
+    background-color: #cfcece;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header {
+    position: relative;
+  }
+}
+
+@media (max-width: 394px) {
+  .header {
+    height: 5rem;
+  }
+  .logo img {
+    height: 5rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  .search-box input {
+    width: 16vh;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -68px;
+    background-color: #cfcece;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
   .header {
     position: relative;
   }
