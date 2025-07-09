@@ -9,7 +9,7 @@
 .header {
   background-image: url("/src/assets/background/Captura\ de\ tela\ de\ 2025-07-08\ 21-52-41.webp");
   background-repeat: no-repeat;
-  background-size: cover; /* ou contain */
+  background-size: cover; /* ou container */
   background-position: center center; /* posição */
   border-radius: 50px;
   border: solid 3px var(--preto);
