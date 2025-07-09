@@ -42,3 +42,16 @@
 .botao-comprar:hover {
   background-color: #218838;
 }
+/*Alert adicionar ao carrinho*/
+.swal2-popup.bebas-alert h2 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.swal2-html-container {
+  font-family: "Bebas Neue", sans-serif;
+}
+.swal2-popup {
+  border: 3px solid var(--preto); /* ou uma cor fixa */
+  border-radius: 20px;
+  padding: 1rem;
+}

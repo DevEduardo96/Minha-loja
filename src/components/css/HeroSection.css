@@ -18,6 +18,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 3rem;
   font-weight: 800;
+  background-color: #bee318b9;
   color: #2e3b4e;
   margin: 0 0 1rem 0;
   line-height: 1.2;
@@ -26,20 +27,21 @@
 }
 
 .hero-text p {
-  color: rgb(113, 197, 17);
+  color: #bde318;
   font-size: 25px;
   margin-bottom: 2rem;
-  max-width: 400px;
+  background-color: #ffffff;
 }
 
 .hero-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 1px solid #2e3b4e;
-  color: #2e3b4e;
-  text-decoration: none;
+  border: solid 3px #121212 !important;
+  border-radius: 20px;
+  color: #ffffff !important;
   font-weight: 600;
   transition: all 0.3s ease;
+  background-color: #fc2e2e;
 }
 
 .hero-button:hover {
@@ -129,4 +131,14 @@
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+}
+
+.hero-paragrafo {
+  border: solid 3px #121212;
+  border-radius: 20px;
+  text-align: center;
+}
+.hero-titulo {
+  border: solid 3px #121212;
+  border-radius: 20px;
 }

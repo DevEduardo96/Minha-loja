@@ -5,6 +5,9 @@ import Header from "../components/Header";
 import Temporizador from "../components/Temporizador";
 import HeroSection from "../components/HeroSection";
 
+// 🔔 Importa SweetAlert2
+import Swal from "sweetalert2";
+
 const categorias = ["todos", "ebooks", "templates", "cursos"];
 
 const Home: React.FC = () => {
@@ -16,7 +19,19 @@ const Home: React.FC = () => {
     localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
 
     window.dispatchEvent(new Event("carrinhoAtualizado"));
-    alert(`${produto.nome} foi adicionado ao carrinho!`);
+    // ✅ Alerta estiloso
+    Swal.fire({
+      title: "Adicionado ao carrinho!",
+      text: `${produto.nome} foi adicionado com sucesso.`,
+      icon: "success",
+      background: "rgba(255, 255, 255, 0.884)", // 🔧 Cor de fundo correta aqui
+      color: "#121212", // 🔧 Cor do texto
+      confirmButtonColor: "#bde318", // 🔧 Cor do botão
+
+      customClass: {
+        popup: "bebas-alert", // classe CSS opcional
+      },
+    });
   };
 
   const produtosFiltrados = produtos.filter((produto) =>

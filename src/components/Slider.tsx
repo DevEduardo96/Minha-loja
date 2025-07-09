@@ -18,7 +18,7 @@ const Slider: React.FC = () => {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src="https://salescdn.net/5u9boJPglkVmDu5QU9N9ZbeHYzU=/adaptive-fit-in/0x0/prod/store/14141/medias/storage/1751481577868.webp"
+            src="https://uyaztjggrfuxtyyfwmnw.supabase.co/storage/v1/object/public/produtos//background_slider.png"
             className="d-block w-100"
             alt="Slide 1"
           />

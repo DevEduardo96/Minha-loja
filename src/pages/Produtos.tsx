@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { produtos } from "../data/Produtos";
-import "./css/Home.css";
+import "./css/Produtos.css";
 import Header from "../components/Header";
 import Slider from "../components/Slider";
 import Temporizador from "../components/Temporizador";
+
+// 🔔 Importa SweetAlert2
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const categorias = ["todos", "ebooks", "templates", "cursos"];
 
@@ -16,7 +22,20 @@ const Produtos: React.FC = () => {
     localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
 
     window.dispatchEvent(new Event("carrinhoAtualizado"));
-    alert(`${produto.nome} foi adicionado ao carrinho!`);
+
+    // ✅ Alerta estiloso
+    MySwal.fire({
+      title: "Adicionado ao carrinho!",
+      text: `${produto.nome} foi adicionado com sucesso.`,
+      icon: "success",
+      background: "rgba(255, 255, 255, 0.884)", // 🔧 Cor de fundo correta aqui
+      color: "#121212", // 🔧 Cor do texto
+      confirmButtonColor: "#bde318", // 🔧 Cor do botão
+
+      customClass: {
+        popup: "bebas-alert", // classe CSS opcional
+      },
+    });
   };
 
   const produtosFiltrados = produtos.filter((produto) =>

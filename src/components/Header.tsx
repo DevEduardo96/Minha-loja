@@ -5,6 +5,7 @@ import "./css/Header.css";
 import logo from "../assets/logo2.webp";
 import CarrinhoLateral from "./CarrinhoLateral";
 import { Link } from "react-router-dom";
+import { Search } from "lucide-react";
 
 const Header: React.FC = () => {
   const [cartCount, setCartCount] = useState(
@@ -54,6 +55,7 @@ const Header: React.FC = () => {
           </nav>
 
           <div className="search-box">
+            <Search className="search-icon" size={20} />
             <input type="text" placeholder="Buscar produtos..." />
           </div>
 
@@ -105,12 +107,10 @@ const Header: React.FC = () => {
       {cartOpen && <div className="overlay" onClick={closeCart} />}
 
       {cartOpen && (
-        <div className="cart-side-menu">
-          <button className="close-btn" onClick={closeCart}>
+        <div className={`cart-side-menu ${cartOpen ? "open" : ""}`}>
+          <button onClick={closeCart} className="close-btn">
             <IoClose size={28} />
           </button>
-
-          {/* ✅ CarrinhoLateral com botão de voltar funcional */}
           <CarrinhoLateral onFechar={closeCart} />
         </div>
       )}
