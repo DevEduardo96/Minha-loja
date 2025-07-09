@@ -41,7 +41,9 @@ const Header: React.FC = () => {
       <header className="header">
         <div className="header-desktop">
           <div className="logo">
-            <img src={logo} alt="Logo" />
+            <Link to={"/"}>
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
 
           <nav className="nav-links">
@@ -77,26 +79,25 @@ const Header: React.FC = () => {
           <IoClose size={28} />
         </button>
         <div className="list-menu">
-          {" "}
-          <a href="/" onClick={closeMenu}>
-            Home
-          </a>
+          <Link to="/" onClick={closeMenu}>
+            HOME
+          </Link>
         </div>
 
         <div className="list-menu">
-          <a href="/produtos" onClick={closeMenu}>
-            Produtos
-          </a>
-        </div>
-        <div className="list-menu">
-          <Link to="/sobre" onClick={closeMenu}>
-            Sobre
+          <Link to="/produtos" onClick={closeMenu}>
+            PRODUTOS
           </Link>
         </div>
         <div className="list-menu">
-          <a href="/produtos" onClick={closeMenu}>
-            Contato
-          </a>
+          <Link to="/sobre" onClick={closeMenu}>
+            SOBRE
+          </Link>
+        </div>
+        <div className="list-menu">
+          <Link to="/contato" onClick={closeMenu}>
+            CONTATO
+          </Link>
         </div>
       </div>
 
