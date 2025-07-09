@@ -1,0 +1,144 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+}
+
+.cart-side-menu {
+  position: fixed;
+  right: -100%; /* escondido inicialmente */
+  top: 0;
+  width: 25rem;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  border: solid 3px var(--preto);
+  color: var(--preto);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Bebas Neue", sans-serif;
+  padding: 1rem;
+  overflow-y: auto;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease-in-out;
+  pointer-events: none; /* impede clique quando escondido */
+  opacity: 0;
+}
+
+/* Mostrar carrinho com transição */
+.cart-side-menu.open {
+  right: 0;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.cart-side-menu h2 {
+  text-align: center;
+  background-color: var(--verde);
+  border-radius: 20px;
+}
+
+.cart-side-menu p {
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 400px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.carrinho-lateral h2 {
+  margin-bottom: 1rem;
+}
+
+.produtos-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.item-carrinho {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--preto) !important;
+  color: #ababac;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-side-menu h2 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.info-carrinho {
+  flex: 1;
+}
+
+.remover {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remover:hover {
+  background-color: red;
+  color: white;
+}
+
+.item-carrinho img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.resumo {
+  margin-top: 1.5rem;
+}
+
+.finalizar {
+  width: 100%;
+  padding: 0.75rem;
+  background: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.voltar-carrinho {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: left;
+}
+
+.voltar-carrinho:hover {
+  text-decoration: underline;
+}
+
+/* div do Botão gerar pix */
+.resumo {
+  text-align: center;
+  padding-bottom: 10px;
+}
+/* mensagem da geração do qr code */
+.important {
+  background-color: #121212d5;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}

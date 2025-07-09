@@ -1,0 +1,57 @@
+.produto-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.produto-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.produto-container p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.produto-container strong {
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.botao-comprar {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  background-color: #28a745;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.botao-comprar:hover {
+  background-color: #218838;
+}
+/*Alert adicionar ao carrinho*/
+.swal2-popup.bebas-alert h2 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.swal2-html-container {
+  font-family: "Bebas Neue", sans-serif;
+}
+.swal2-popup {
+  border: 3px solid var(--preto); /* ou uma cor fixa */
+  border-radius: 20px;
+  padding: 1rem;
+}

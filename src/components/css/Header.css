@@ -1,0 +1,251 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+  --vermelho: rgb(255, 60, 0);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+.header {
+  background-image: url("/src/assets/background/Captura\ de\ tela\ de\ 2025-07-08\ 21-52-41.webp");
+  background-repeat: no-repeat;
+  background-size: cover; /* ou contain */
+  background-position: center center; /* posição */
+  border-radius: 50px;
+  border: solid 3px var(--preto);
+  color: white;
+  /*position: sticky;*/
+  top: 0;
+  z-index: 555;
+  padding: 0rem 1.5rem;
+}
+
+.header a {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.header-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: nowrap;
+}
+
+.logo img {
+  height: 8rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: #000;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--vermelho);
+}
+
+.search-box {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.6rem 0.8rem 0.6rem 2.2rem; /* espaço pro ícone */
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.7rem;
+  color: #ffffff;
+  pointer-events: none;
+  background-color: var(--verde);
+  border-radius: 20px;
+}
+
+.cart-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-icon {
+  color: var(--preto);
+  cursor: pointer;
+  position: relative;
+}
+.cart-icon:hover {
+  color: var(--vermelho);
+}
+
+.cart-count {
+  position: absolute;
+  top: -11px;
+  right: -7px;
+  background: rgb(255, 60, 0);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--preto);
+  cursor: pointer;
+  display: none;
+}
+
+/* Side menu (mobile) */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.884);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1rem;
+  z-index: 1001;
+  transition: left 0.3s ease-in-out;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.list-menu {
+  background-color: var(--verde);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.side-menu a {
+  color: var(--preto);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.side-menu a:hover {
+  color: var(--verde);
+}
+
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #000 !important;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.voltar-carrinho {
+  display: none;
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .header-desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .logo img {
+    height: 3.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .cart-icon {
+    font-size: 1.6rem;
+  }
+
+  .cart-count {
+    top: -3px;
+  }
+}
+
+@media (max-width: 430px) {
+  .logo img {
+    height: 3rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.5rem;
+  }
+
+  .cart-icon {
+    font-size: 1.4rem;
+  }
+  .cart-count {
+    top: -3px;
+  }
+}
