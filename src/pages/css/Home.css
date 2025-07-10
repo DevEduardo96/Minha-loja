@@ -154,7 +154,7 @@ h1 {
 }
 
 /* Celulares pequenos (FORÇA 2 COLUNAS) */
-@media (max-width: 430px) {
+@media (max-width: 480px) {
   .produtos {
     grid-template-columns: repeat(2, 1fr); /* ← força 2 colunas */
     gap: 1rem;
@@ -184,8 +184,21 @@ h1 {
     font-size: 18px;
     padding: 0.4rem 0.8rem;
   }
+  .categorias-menu button {
+    font-size: 8px !important;
+  }
 }
 
 .categorias-menu {
   border-radius: 20px;
+}
+
+@media (max-width: 393px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr); /* ← força 2 colunas */
+    gap: 1rem;
+  }
+  .categorias-menu button {
+    font-size: 8px !important;
+  }
 }

@@ -12,9 +12,9 @@
   background-size: cover; /* ou contain */
   background-position: center center; /* posição */
   border-radius: 50px;
-  border: solid 3px var(--preto);
+  border: solid 5px var(--verde);
   color: white;
-  /*position: sticky;*/
+  /*sition: sticky;*/
   top: 0;
   z-index: 555;
   padding: 0rem 1.5rem;

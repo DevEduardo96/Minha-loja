@@ -10,11 +10,11 @@ const HeroSection: React.FC = () => {
           <h1 className="hero-titulo">Deseja Alavancar Seus Resultados</h1>
           <p className="hero-paragrafo">
             Reunimos especialistas de diversos nichos para criar os melhores
-            conteúdos digitais em um só lugar. Aqui você encontra e-books,
-            templates, guias práticos e materiais prontos para usar,
-            desenvolvidos para quem quer aprender mais, ganhar tempo ou
-            transformar conhecimento em renda. Escolha seu pack ideal e comece
-            hoje mesmo!
+            conteúdos digitais em um só lugar. Aqui você encontra{" "}
+            <strong>e-books,templates, guias práticos e materiais </strong>
+            prontos para usar, desenvolvidos para quem quer aprender mais,
+            ganhar tempo ou transformar conhecimento em renda. Escolha seu pack
+            ideal e comece hoje mesmo!
           </p>
         </div>
         <a href="#loja" className="hero-button">
