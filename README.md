@@ -69,3 +69,4 @@ export default tseslint.config([
 ```
 # Minha-loja
 # Artfix-digital
+# Artfix-digital
