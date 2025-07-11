@@ -57,7 +57,7 @@
 .slider-image.active {
   opacity: 1;
 }
-
+/*mobile*/
 @media (max-width: 768px) {
   .slider-container {
     flex-direction: column;
