@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { produtos } from "../data/Produtos";
 import "./css/Home.css";
 import Header from "../components/Header";
@@ -8,10 +8,12 @@ import HeroSection from "../components/HeroSection";
 // 🔔 Importa SweetAlert2
 import Swal from "sweetalert2";
 
-const categorias = ["todos", "ebooks", "templates", "cursos"];
-
 const Home: React.FC = () => {
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState("todos");
+  const produtosRecomendadosIds = [1, 5, 8, 10]; // 🔧 Altere aqui os IDs dos produtos recomendados
+
+  const produtosFiltrados = produtos.filter((produto) =>
+    produtosRecomendadosIds.includes(produto.id)
+  );
 
   const adicionarAoCarrinho = (produto: any) => {
     const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho") || "[]");
@@ -19,72 +21,41 @@ const Home: React.FC = () => {
     localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
 
     window.dispatchEvent(new Event("carrinhoAtualizado"));
-    // ✅ Alerta estiloso
+
     Swal.fire({
       title: "Adicionado ao carrinho!",
       text: `${produto.nome} foi adicionado com sucesso.`,
       icon: "success",
-      background: "rgba(255, 255, 255, 0.884)", // 🔧 Cor de fundo correta aqui
-      color: "#121212", // 🔧 Cor do texto
-      confirmButtonColor: "#bde318", // 🔧 Cor do botão
-
+      background: "rgba(255, 255, 255, 0.884)",
+      color: "#121212",
+      confirmButtonColor: "#bde318",
       customClass: {
-        popup: "bebas-alert", // classe CSS opcional
+        popup: "bebas-alert",
       },
     });
   };
-
-  const produtosFiltrados = produtos.filter((produto) =>
-    categoriaSelecionada === "todos"
-      ? true
-      : produto.categoria === categoriaSelecionada
-  );
 
   return (
     <div className="container">
       <Header />
       <HeroSection />
 
-      {/* Seção de Categorias */}
-      <div
-        className="categorias-menu"
+      <h2
         style={{
-          display: "flex",
-          gap: "0.5rem",
-          flexWrap: "nowrap",
-          overflowX: "auto",
-          padding: "1rem",
-          margin: "1.5rem 0",
-          justifyContent: "center",
-          backgroundColor: "#121212",
+          textAlign: "center",
+          fontSize: "1.8rem",
+          backgroundColor: "black",
+          color: "white",
+          borderRadius: "20px",
+          padding: "1rem 2rem", // 👉 aumenta a área interna
+          // width: "fit-content",👉 faz o fundo se ajustar ao conteúdo
+          // margin: "2rem auto",👉 centraliza horizontalmente
         }}
       >
-        {categorias.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setCategoriaSelecionada(cat)}
-            style={{
-              whiteSpace: "nowrap",
-              flexShrink: 0,
-              padding: "0.5rem 1rem",
-              borderRadius: "20px",
-              border: "none",
-              backgroundColor:
-                categoriaSelecionada === cat ? "#bde318" : "#333",
-              color: categoriaSelecionada === cat ? "#121212" : "#fff",
-              cursor: "pointer",
-              fontWeight: "bold",
-              fontSize: "0.9rem",
-            }}
-          >
-            {cat.toUpperCase()}
-          </button>
-        ))}
-      </div>
+        Produtos Recomendados
+      </h2>
 
       <Temporizador />
-
-      {/* Lista de Produtos */}
       <div className="produtos">
         {produtosFiltrados.map((produto) => (
           <div key={produto.id} className="produto">

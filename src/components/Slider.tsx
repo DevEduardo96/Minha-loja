@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import slider from "../assets/slider-img/imagem_convertida.svg";
+import slider02 from "../assets/slider-img/background02.webp";
 
 const Slider: React.FC = () => {
   useEffect(() => {
@@ -17,25 +19,13 @@ const Slider: React.FC = () => {
     >
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img
-            src="https://uyaztjggrfuxtyyfwmnw.supabase.co/storage/v1/object/public/produtos//background_slider.png"
-            className="d-block w-100"
-            alt="Slide 1"
-          />
+          <img src={slider02} className="d-block w-100" alt="Slide 1" />
         </div>
         <div className="carousel-item">
-          <img
-            src="https://salescdn.net/5u9boJPglkVmDu5QU9N9ZbeHYzU=/adaptive-fit-in/0x0/prod/store/14141/medias/storage/1751481577868.webp"
-            className="d-block w-100"
-            alt="Slide 2"
-          />
+          <img src={slider} className="d-block w-100" alt="Slide 2" />
         </div>
         <div className="carousel-item">
-          <img
-            src="https://salescdn.net/5u9boJPglkVmDu5QU9N9ZbeHYzU=/adaptive-fit-in/0x0/prod/store/14141/medias/storage/1751481577868.webp"
-            className="d-block w-100"
-            alt="Slide 3"
-          />
+          <img src={slider} className="d-block w-100" alt="Slide 3" />
         </div>
       </div>
     </div>

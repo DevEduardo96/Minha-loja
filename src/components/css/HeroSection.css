@@ -9,6 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   gap: 2rem;
+  padding-bottom: 1px;
 }
 
 .hero-text {
@@ -16,7 +17,7 @@
   max-width: 600px;
   text-align: left;
   padding: 1rem;
-  background: #fff;
+  background-color: #fff;
   border-radius: 1rem;
   border: solid 5px #bee31886;
 }
@@ -25,16 +26,18 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
   font-weight: 800;
-  background-color: #fc2e2e;
+  background-color: #dd3c27;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   line-height: 1.1;
   text-align: center;
+  border: 5px solid #525b68;
+  border-radius: 20px;
 }
 
 .hero-text p {
-  color: #121212;
+  color: #383838;
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -72,7 +75,6 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 1rem;
 }
 
 .hero-image img {
@@ -104,9 +106,9 @@
 @media (max-width: 480px) {
   .hero-container {
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 0;
     text-align: center;
-    gap: 2rem;
+    gap: 0;
   }
 
   .hero-text {
@@ -123,7 +125,7 @@
     line-height: 1.2;
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border: 2px solid #2e3b4e;
+    border: 5px solid #525b68;
     border-radius: 10px;
     text-align: center;
   }
@@ -156,7 +158,7 @@
 
   .hero-image {
     order: -1;
-    padding: 1rem;
+    padding: 0px !important;
   }
 
   .hero-image img {
@@ -167,7 +169,6 @@
 
   .hero-paragrafo,
   .hero-titulo {
-    border: 2px solid #121212;
     border-radius: 12px;
     padding: 0.5rem;
     text-align: center;

@@ -2,54 +2,66 @@ import React, { useState } from "react";
 import { produtos } from "../data/Produtos";
 import "./css/Produtos.css";
 import Header from "../components/Header";
-import Slider from "../components/Slider";
 import Temporizador from "../components/Temporizador";
 
-// 🔔 Importa SweetAlert2
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
+import SliderProdutos from "../components/sliders/Slider-produtos";
 const MySwal = withReactContent(Swal);
 
 const categorias = ["todos", "ebooks", "templates", "cursos"];
+const itensPorPagina = 12;
 
 const Produtos: React.FC = () => {
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("todos");
+  const [paginaAtual, setPaginaAtual] = useState(1);
 
   const adicionarAoCarrinho = (produto: any) => {
     const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho") || "[]");
     const novoCarrinho = [...carrinhoAtual, produto];
     localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
-
     window.dispatchEvent(new Event("carrinhoAtualizado"));
 
-    // ✅ Alerta estiloso
     MySwal.fire({
       title: "Adicionado ao carrinho!",
       text: `${produto.nome} foi adicionado com sucesso.`,
       icon: "success",
-      background: "rgba(255, 255, 255, 0.884)", // 🔧 Cor de fundo correta aqui
-      color: "#121212", // 🔧 Cor do texto
-      confirmButtonColor: "#bde318", // 🔧 Cor do botão
-
+      background: "rgba(255, 255, 255, 0.884)",
+      color: "#121212",
+      confirmButtonColor: "#bde318",
       customClass: {
-        popup: "bebas-alert", // classe CSS opcional
+        popup: "bebas-alert",
       },
     });
   };
 
+  // 🔍 Filtra por categoria
   const produtosFiltrados = produtos.filter((produto) =>
     categoriaSelecionada === "todos"
       ? true
       : produto.categoria === categoriaSelecionada
   );
 
+  // 📄 Paginação
+  const totalPaginas = Math.ceil(produtosFiltrados.length / itensPorPagina);
+  const indiceInicial = (paginaAtual - 1) * itensPorPagina;
+  const produtosPaginados = produtosFiltrados.slice(
+    indiceInicial,
+    indiceInicial + itensPorPagina
+  );
+
+  // 🔄 Resetar para página 1 ao mudar categoria
+  const mudarCategoria = (categoria: string) => {
+    setCategoriaSelecionada(categoria);
+    setPaginaAtual(1);
+  };
+
   return (
     <div className="container">
       <Header />
-      <Slider />
+      <SliderProdutos />
 
-      {/* Seção de Categorias */}
+      {/* Categorias */}
       <div
         className="categorias-menu"
         style={{
@@ -66,7 +78,7 @@ const Produtos: React.FC = () => {
         {categorias.map((cat) => (
           <button
             key={cat}
-            onClick={() => setCategoriaSelecionada(cat)}
+            onClick={() => mudarCategoria(cat)}
             style={{
               whiteSpace: "nowrap",
               flexShrink: 0,
@@ -88,24 +100,52 @@ const Produtos: React.FC = () => {
 
       <Temporizador />
 
+      {/* Produtos */}
       <div className="produtos">
-        {produtosFiltrados.map((produto) => (
+        {produtosPaginados.map((produto) => (
           <div key={produto.id} className="produto">
             <h2>{produto.nome}</h2>
             <img src={produto.imagem} alt={produto.nome} />
             <p>{produto.descricao}</p>
-
             <div className="preco-container">
               {produto.precoAntigo && (
                 <span className="preco-antigo">{produto.precoAntigo}</span>
               )}
               <span className="preco-novo">{produto.preco}</span>
             </div>
-
             <button onClick={() => adicionarAoCarrinho(produto)}>
               Adquirir
             </button>
           </div>
+        ))}
+      </div>
+
+      {/* Paginação */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "2rem",
+          gap: "0.5rem",
+          flexWrap: "wrap",
+        }}
+      >
+        {Array.from({ length: totalPaginas }, (_, i) => (
+          <button
+            key={i + 1}
+            onClick={() => setPaginaAtual(i + 1)}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: paginaAtual === i + 1 ? "#bde318" : "#333",
+              color: paginaAtual === i + 1 ? "#121212" : "#fff",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+          >
+            {i + 1}
+          </button>
         ))}
       </div>
     </div>
