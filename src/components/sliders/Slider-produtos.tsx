@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
 import menino from "./img/menino.webp";
 import imagem2 from "./img/apontando.webp";
 import imagem3 from "./img/braçoscruzados.png";
 import "./css/Slider-produtos.css";
+import { useState, useEffect } from "react";
 
 const images = [menino, imagem2, imagem3];
 
