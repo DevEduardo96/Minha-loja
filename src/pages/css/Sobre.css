@@ -1,0 +1,26 @@
+.container-sobre {
+  background-image: url("/src/assets/background/background.png");
+  background-size: cover;
+}
+.sobre-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  color: #121212;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 7rem;
+}
+
+.sobre-container h2 {
+  font-size: 2rem;
+  color: #bde318;
+  margin-bottom: 1rem;
+}
+
+.sobre-container p {
+  margin-bottom: 1.5rem;
+}

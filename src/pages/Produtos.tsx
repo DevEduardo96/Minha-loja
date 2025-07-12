@@ -9,7 +9,7 @@ import withReactContent from "sweetalert2-react-content";
 import SliderProdutos from "../components/sliders/Slider-produtos";
 const MySwal = withReactContent(Swal);
 
-const categorias = ["todos", "ebooks", "templates", "cursos"];
+const categorias = ["todos", "ebooks", "templates", "sites"];
 const itensPorPagina = 12;
 
 const Produtos: React.FC = () => {

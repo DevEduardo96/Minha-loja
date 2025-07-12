@@ -28,7 +28,7 @@ export const produtos: Produto[] = [
     preco: "R$ 39,90",
     descricao: "Descrição do produto 3.",
     linkPix: "https://pix.exemplo.com/pagar?id=3",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=6",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 7,
@@ -77,7 +77,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=8",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=6",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 10,
@@ -107,7 +107,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=8",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 12,
@@ -127,7 +127,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=8",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 14,
@@ -137,7 +137,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=6",
-    categoria: "cursos",
+    categoria: "sites",
   },
   {
     id: 15,
@@ -157,6 +157,6 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=8",
-    categoria: "cursos",
+    categoria: "sites",
   },
 ];
