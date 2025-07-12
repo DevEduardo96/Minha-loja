@@ -44,7 +44,6 @@
 .nav-links {
   display: flex;
   gap: 1.5rem;
-  font-weight: 600;
 }
 
 .nav-links a {
@@ -163,10 +162,11 @@
   color: var(--preto);
   font-size: 1rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .side-menu a:hover {
-  color: var(--verde);
+  color: rgb(255, 51, 0);
 }
 
 .close-btn {

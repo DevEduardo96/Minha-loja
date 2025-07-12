@@ -1,18 +1,15 @@
-.container-sobre {
-  background-image: url("/src/assets/background/background.png");
-  background-size: cover;
-}
 .sobre-container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
   background-color: #fff;
   color: #121212;
   line-height: 1.7;
   font-size: 1.1rem;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  padding: 7rem;
+  padding: 4rem;
+  box-sizing: border-box;
+  margin-top: 2rem;
 }
 
 .sobre-container h2 {
@@ -23,4 +20,23 @@
 
 .sobre-container p {
   margin-bottom: 1.5rem;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .sobre-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 480px) {
+  .sobre-container h2 {
+    font-size: 1.3rem;
+  }
 }

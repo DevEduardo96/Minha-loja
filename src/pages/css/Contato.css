@@ -1,42 +1,104 @@
+/* Container principal */
+.container-menu {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contato-container {
   max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #f5f5f5;
-  border: solid 3px #bde318;
+  width: 100%;
+  background-color: #fff;
+  padding: 3rem;
   border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
   text-align: center;
 }
 
-.container-menu {
-  padding: 5rem;
-  background-image: url("/src/assets/background/background.png");
-  background-size: cover;
+.contato-container h2 {
+  font-size: 2rem;
+  color: #bde318;
+  margin-bottom: 1rem;
 }
+
+.contato-container p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Formulário */
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .formulario-contato input,
 .formulario-contato textarea {
   width: 100%;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
+  padding: 1rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
 }
 
+.formulario-contato input:focus,
+.formulario-contato textarea:focus {
+  border-color: #bde318;
+  outline: none;
+}
+
+/* Botão */
 .formulario-contato button {
-  background-color: #e61c0e;
-  color: rgb(255, 255, 255);
+  background-color: #bde318;
+  color: #121212;
   border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
-  border: solid 2px #e61c0e;
+  transition: background-color 0.3s;
 }
 
 .formulario-contato button:hover {
-  background-color: #ffffff;
-  color: black;
-  border: solid 2px black;
+  background-color: #a6c814;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 600px) {
+  .container-menu {
+    padding: 1rem;
+    min-height: auto; /* remove o min-height fixo em telas pequenas */
+  }
+
+  .contato-container {
+    padding: 1.5rem;
+  }
+
+  .contato-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .contato-container p {
+    font-size: 0.95rem;
+  }
+
+  .formulario-contato input,
+  .formulario-contato textarea {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .formulario-contato button {
+    font-size: 0.95rem;
+    padding: 0.85rem;
+  }
 }
