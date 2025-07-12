@@ -1,6 +1,7 @@
 :root {
   --verde: #bde318;
   --preto: #121212;
+  --vermelho: #fc2e2e;
 }
 
 .container {
@@ -76,7 +77,7 @@ h1 {
 }
 
 .preco-antigo {
-  color: #999;
+  color: #fc2e2e;
   text-decoration: line-through;
   font-size: 0.95rem;
 }

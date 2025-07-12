@@ -1,3 +1,9 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+  --vermelho: #fc2e2e;
+}
+
 .hero-container {
   display: flex;
   align-items: center;
@@ -26,7 +32,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
   font-weight: 800;
-  background-color: #dd3c27;
+  background-color: var(--vermelho);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;

@@ -1,3 +1,8 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+  --vermelho: #fc2e2e;
+}
 /* Container principal */
 .container-menu {
   padding: 2rem;
@@ -59,19 +64,26 @@
 
 /* Botão */
 .formulario-contato button {
-  background-color: #bde318;
-  color: #121212;
-  border: none;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  color: #ffffff;
+  background-color: #fc2e2e;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
-  transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .formulario-contato button:hover {
-  background-color: #a6c814;
+  background-color: #ffffff;
+  color: #121212;
+  border-color: #121212;
 }
 
 /* Responsividade para mobile */

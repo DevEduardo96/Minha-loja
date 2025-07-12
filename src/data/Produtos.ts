@@ -67,7 +67,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=7",
-    categoria: "ebooks",
+    categoria: "templates",
   },
   {
     id: 8,
@@ -97,7 +97,7 @@ export const produtos: Produto[] = [
     precoAntigo: "R$ 79,90",
     descricao: "Descrição do produto 6.",
     linkPix: "https://pix.exemplo.com/pagar?id=7",
-    categoria: "ebooks",
+    categoria: "templates",
   },
   {
     id: 11,

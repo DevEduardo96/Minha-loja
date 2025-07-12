@@ -7,6 +7,7 @@ import Temporizador from "../components/Temporizador";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import SliderProdutos from "../components/sliders/Slider-produtos";
+import WhatsAppButton from "../components/WhatsAppButton";
 const MySwal = withReactContent(Swal);
 
 const categorias = ["todos", "ebooks", "templates", "sites"];
@@ -148,6 +149,7 @@ const Produtos: React.FC = () => {
           </button>
         ))}
       </div>
+      <WhatsAppButton />
     </div>
   );
 };

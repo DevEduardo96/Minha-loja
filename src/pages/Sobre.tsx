@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "../components/Header";
 import "./css/Sobre.css";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Sobre: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const Sobre: React.FC = () => {
           seu projeto acontecer.
         </p>
       </div>
+      <WhatsAppButton />
     </div>
   );
 };

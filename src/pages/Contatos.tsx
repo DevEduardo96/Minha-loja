@@ -4,6 +4,7 @@ import Header from "../components/Header";
 
 // 🔔 Importa SweetAlert2
 import Swal from "sweetalert2";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Contato: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -97,6 +98,7 @@ const Contato: React.FC = () => {
           </form>
         </div>
       </div>
+      <WhatsAppButton />
     </div>
   );
 };

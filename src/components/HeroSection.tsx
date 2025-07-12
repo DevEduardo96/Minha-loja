@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/HeroSection.css";
 import modeloImg from "../assets/modelo.webp"; // ajuste o caminho conforme necessário
+import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
   return (
@@ -15,9 +16,11 @@ const HeroSection: React.FC = () => {
             pensado para quem busca agilidade sem abrir mão do estilo.
           </p>
         </div>
-        <a href="#loja" className="hero-button">
-          EXPLORAR <span className="arrow">»</span>
-        </a>
+        <nav>
+          <Link to="/produtos" className="hero-button">
+            EXPLORAR <span className="arrow">»</span>
+          </Link>
+        </nav>
       </div>
       <div className="hero-image">
         <img src={modeloImg} alt="Modelo com camiseta personalizada" />
