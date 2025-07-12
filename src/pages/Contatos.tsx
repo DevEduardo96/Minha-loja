@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import "./css/Contato.css"; // (opcional para estilização)
+import "./css/Contato.css";
 import Header from "../components/Header";
+
+// 🔔 Importa SweetAlert2
+import Swal from "sweetalert2";
 
 const Contato: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +18,47 @@ const Contato: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Mensagem enviada:", formData);
-    alert("Mensagem enviada com sucesso!");
-    setFormData({ nome: "", email: "", mensagem: "" });
+
+    try {
+      const response = await fetch("https://formspree.io/f/xjkrnnzl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: formData.nome,
+          email: formData.email,
+          mensagem: formData.mensagem,
+        }),
+      });
+
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Mensagem enviada!",
+          text: "Obrigado pelo contato. Em breve responderemos.",
+          confirmButtonColor: "#3085d6",
+        });
+        setFormData({ nome: "", email: "", mensagem: "" });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Erro ao enviar",
+          text: "Tente novamente mais tarde.",
+          confirmButtonColor: "#d33",
+        });
+      }
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      Swal.fire({
+        icon: "warning",
+        title: "Erro de conexão",
+        text: "Verifique sua internet e tente novamente.",
+        confirmButtonColor: "#f39c12",
+      });
+    }
   };
 
   return (

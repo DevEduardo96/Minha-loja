@@ -1,3 +1,9 @@
+/* Container principal */
+.container-sobre {
+  background-image: url("/src/assets/background/background.png");
+  background-size: cover;
+}
+
 .sobre-container {
   max-width: 800px;
   width: 100%;
@@ -10,6 +16,8 @@
   padding: 4rem;
   box-sizing: border-box;
   margin-top: 2rem;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .sobre-container h2 {
