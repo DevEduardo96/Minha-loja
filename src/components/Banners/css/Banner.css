@@ -1,0 +1,74 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+  --vermelho: #fc2e2e;
+}
+.banner {
+  background-color: #ffffff;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  background-image: url("../banner-img/background-banner.webp");
+
+  border-radius: 20px;
+}
+
+.banner-image img {
+  width: 50%;
+  max-width: 500px;
+  border-radius: 1rem;
+}
+
+.banner-text {
+  flex: 1;
+  padding: 10px;
+  min-width: 280px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: solid 5px #bee31886;
+}
+
+.banner-text h1 {
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--vermelho);
+}
+
+.banner-text p {
+  font-size: 1.25rem;
+  color: #383838;
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
+  padding: 1rem;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .banner-image img {
+    max-width: 100%;
+  }
+}

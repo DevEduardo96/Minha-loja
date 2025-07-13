@@ -4,7 +4,7 @@ export const produtos: Produto[] = [
   {
     id: 1,
     nome: "Novo Produto 1",
-    imagem: "./produtos-img/pasta.webp",
+    imagem: "./produtos-img/ebooks.webp",
     preco: "R$ 0,20",
     precoAntigo: "R$ 9,90",
     descricao: "Guia completo para ganhar dinheiro com redes sociais.",
@@ -14,7 +14,7 @@ export const produtos: Produto[] = [
   {
     id: 2,
     nome: "Novo Produto 2",
-    imagem: "./produtos-img/pasta.webp",
+    imagem: "./produtos-img/templates.webp",
     preco: "R$ 19,90",
     precoAntigo: "R$ 49,90",
     descricao: "50 templates prontos para usar no Instagram.",

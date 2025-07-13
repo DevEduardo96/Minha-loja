@@ -8,6 +8,8 @@ import HeroSection from "../components/HeroSection";
 // 🔔 Importa SweetAlert2
 import Swal from "sweetalert2";
 import WhatsAppButton from "../components/WhatsAppButton";
+import Banner from "../components/Banners/Banner";
+import Banner02 from "../components/Banners/Banner02";
 
 const Home: React.FC = () => {
   const produtosRecomendadosIds = [1, 5, 8, 10]; // 🔧 Altere aqui os IDs dos produtos recomendados
@@ -77,6 +79,8 @@ const Home: React.FC = () => {
           </div>
         ))}
       </div>
+      <Banner />
+      <Banner02 />
       <WhatsAppButton />
     </div>
   );

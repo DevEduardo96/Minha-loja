@@ -12,7 +12,6 @@
   background-size: cover; /* ou contain */
   background-position: center center; /* posição */
   border-radius: 50px;
-  border: solid 5px var(--verde);
   color: white;
   /*sition: sticky;*/
   top: 0;
@@ -47,9 +46,11 @@
 }
 
 .nav-links a {
-  color: #000;
-  font-size: 20px;
+  color: var(--preto);
+  font-size: 16px;
   transition: color 0.3s ease;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 550;
 }
 
 .nav-links a:hover {

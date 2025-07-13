@@ -1,0 +1,49 @@
+:root {
+  --verde: #bde318;
+  --preto: #121212;
+  --vermelho: #fc2e2e;
+}
+
+.oferta-banner {
+  background-color: var(--vermelho); /* rosa vibrante */
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.oferta-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.oferta-conteudo h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.botao-oferta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.botao-oferta:hover {
+  background-color: white;
+  color: var(--preto);
+}
+
+.seta {
+  font-size: 1.2rem;
+}

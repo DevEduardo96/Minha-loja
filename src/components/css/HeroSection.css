@@ -16,6 +16,7 @@
   background-repeat: no-repeat;
   gap: 2rem;
   padding-bottom: 1px;
+  border-radius: 20px;
 }
 
 .hero-text {
@@ -38,7 +39,7 @@
   margin-bottom: 1rem;
   line-height: 1.1;
   text-align: center;
-  border: 5px solid #525b68;
+
   border-radius: 20px;
 }
 
