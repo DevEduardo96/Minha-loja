@@ -1,0 +1,79 @@
+/* Container principal com fundo */
+.container-politica {
+  background-image: url("/src/assets/background/background.png");
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem;
+}
+
+/* Caixa de conteúdo da política */
+.politica-container {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  color: #121212;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 4rem;
+  box-sizing: border-box;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+/* Título principal */
+.politica-container h2 {
+  font-size: 2rem;
+  color: #bde318;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Subtítulos */
+.politica-container h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Parágrafos e listas */
+.politica-container p,
+.politica-container li {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Listas */
+.politica-container ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 768px) {
+  .politica-container {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .politica-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .politica-container h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 480px) {
+  .politica-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .politica-container h3 {
+    font-size: 1.1rem;
+  }
+}

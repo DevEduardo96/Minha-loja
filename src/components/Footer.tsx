@@ -12,10 +12,13 @@ const Footer: React.FC = () => {
           reservados.
         </p>
         <div className="flex gap-4 mt-4 md:mt-0">
-          <Link to={"/"} className="hover:text-gray-400 transition">
+          <Link
+            to={"/politica-de-privacidade"}
+            className="hover:text-gray-400 transition"
+          >
             Política de Privacidade
           </Link>
-          <Link to={"/"} className="hover:text-gray-400 transition">
+          <Link to={"termosUso"} className="hover:text-gray-400 transition">
             Termos de Uso
           </Link>
           <Link to={"/contato"} className="hover:text-gray-400 transition">
