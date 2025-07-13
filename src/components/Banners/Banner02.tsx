@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../Banners/css/Banner02.css";
 
 const OfertaBanner = () => {
@@ -5,9 +6,9 @@ const OfertaBanner = () => {
     <section className="oferta-banner">
       <div className="oferta-conteudo">
         <h2>Facilitamos sua criatividade. Baixe agora e comece hoje!</h2>
-        <a href="#comprar" className="botao-oferta">
+        <Link to={"/produtos"} className="botao-oferta">
           EXPLORAR <span className="seta">»</span>
-        </a>
+        </Link>
       </div>
     </section>
   );

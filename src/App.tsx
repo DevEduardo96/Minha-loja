@@ -7,6 +7,7 @@ import Carrinho from "./pages/Carrinho";
 import PagamentoPix from "./components/PagamentoPix";
 import Sobre from "./pages/Sobre";
 import Contatos from "./pages/Contatos";
+import DetalhesProduto from "./pages/DetalhesProduto";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
       <Route path="/pagamento" element={<PagamentoPix />} />
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/contato" element={<Contatos />} />
+      <Route path="/produto/:id" element={<DetalhesProduto />} />
     </Routes>
   );
 };

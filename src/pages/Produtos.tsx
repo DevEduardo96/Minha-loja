@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { produtos } from "../data/Produtos";
 import "./css/Produtos.css";
 import Header from "../components/Header";
 import Temporizador from "../components/Temporizador";
+import SliderProdutos from "../components/sliders/Slider-produtos";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import SliderProdutos from "../components/sliders/Slider-produtos";
-import WhatsAppButton from "../components/WhatsAppButton";
+
 const MySwal = withReactContent(Swal);
 
 const categorias = ["todos", "ebooks", "templates", "sites"];
@@ -16,6 +18,7 @@ const itensPorPagina = 12;
 const Produtos: React.FC = () => {
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("todos");
   const [paginaAtual, setPaginaAtual] = useState(1);
+  const navigate = useNavigate();
 
   const adicionarAoCarrinho = (produto: any) => {
     const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho") || "[]");
@@ -36,7 +39,7 @@ const Produtos: React.FC = () => {
     });
   };
 
-  // 🔍 Filtra por categoria
+  // 🔍 Filtrar produtos por categoria
   const produtosFiltrados = produtos.filter((produto) =>
     categoriaSelecionada === "todos"
       ? true
@@ -51,7 +54,6 @@ const Produtos: React.FC = () => {
     indiceInicial + itensPorPagina
   );
 
-  // 🔄 Resetar para página 1 ao mudar categoria
   const mudarCategoria = (categoria: string) => {
     setCategoriaSelecionada(categoria);
     setPaginaAtual(1);
@@ -62,7 +64,7 @@ const Produtos: React.FC = () => {
       <Header />
       <SliderProdutos />
 
-      {/* Categorias */}
+      {/* Menu de Categorias */}
       <div
         className="categorias-menu"
         style={{
@@ -101,10 +103,15 @@ const Produtos: React.FC = () => {
 
       <Temporizador />
 
-      {/* Produtos */}
+      {/* Lista de Produtos */}
       <div className="produtos">
         {produtosPaginados.map((produto) => (
-          <div key={produto.id} className="produto">
+          <div
+            key={produto.id}
+            className="produto"
+            onClick={() => navigate(`/produto/${produto.id}`)}
+            style={{ cursor: "pointer" }}
+          >
             <h2>{produto.nome}</h2>
             <img src={produto.imagem} alt={produto.nome} />
             <p>{produto.descricao}</p>
@@ -114,7 +121,12 @@ const Produtos: React.FC = () => {
               )}
               <span className="preco-novo">{produto.preco}</span>
             </div>
-            <button onClick={() => adicionarAoCarrinho(produto)}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // evita navegação ao clicar no botão
+                adicionarAoCarrinho(produto);
+              }}
+            >
               Adquirir
             </button>
           </div>
@@ -149,6 +161,7 @@ const Produtos: React.FC = () => {
           </button>
         ))}
       </div>
+
       <WhatsAppButton />
     </div>
   );

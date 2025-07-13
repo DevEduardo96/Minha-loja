@@ -4,6 +4,7 @@ import "./css/Home.css";
 import Header from "../components/Header";
 import Temporizador from "../components/Temporizador";
 import HeroSection from "../components/HeroSection";
+import { useNavigate } from "react-router-dom"; // Importa aqui
 
 // 🔔 Importa SweetAlert2
 import Swal from "sweetalert2";
@@ -12,7 +13,9 @@ import Banner from "../components/Banners/Banner";
 import Banner02 from "../components/Banners/Banner02";
 
 const Home: React.FC = () => {
-  const produtosRecomendadosIds = [1, 5, 8, 10]; // 🔧 Altere aqui os IDs dos produtos recomendados
+  const navigate = useNavigate(); // Use dentro do componente
+
+  const produtosRecomendadosIds = [1, 5, 8, 10]; // 🔧 IDs recomendados
 
   const produtosFiltrados = produtos.filter((produto) =>
     produtosRecomendadosIds.includes(produto.id)
@@ -50,9 +53,9 @@ const Home: React.FC = () => {
           backgroundColor: "black",
           color: "white",
           borderRadius: "20px",
-          padding: "1rem 2rem", // 👉 aumenta a área interna
-          // width: "fit-content",👉 faz o fundo se ajustar ao conteúdo
-          // margin: "2rem auto",👉 centraliza horizontalmente
+          padding: "1rem 2rem",
+          // width: "fit-content",
+          // margin: "2rem auto",
         }}
       >
         Produtos Recomendados
@@ -61,7 +64,12 @@ const Home: React.FC = () => {
       <Temporizador />
       <div className="produtos">
         {produtosFiltrados.map((produto) => (
-          <div key={produto.id} className="produto">
+          <div
+            key={produto.id}
+            className="produto"
+            onClick={() => navigate(`/produto/${produto.id}`)}
+            style={{ cursor: "pointer" }}
+          >
             <h2>{produto.nome}</h2>
             <img src={produto.imagem} alt={produto.nome} />
             <p>{produto.descricao}</p>
@@ -73,12 +81,18 @@ const Home: React.FC = () => {
               <span className="preco-novo">{produto.preco}</span>
             </div>
 
-            <button onClick={() => adicionarAoCarrinho(produto)}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // evita o clique no botão ativar o onClick do card
+                adicionarAoCarrinho(produto);
+              }}
+            >
               ADQUIRIR
             </button>
           </div>
         ))}
       </div>
+
       <Banner />
       <Banner02 />
       <WhatsAppButton />

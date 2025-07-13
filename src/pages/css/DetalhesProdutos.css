@@ -1,0 +1,131 @@
+.container-principal {
+  display: flex;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.coluna-esquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagem-principal {
+  width: 100%;
+  max-width: 600px; /* Aumentado de 400px para 600px */
+  height: 500px; /* Altura fixa para destacar mais */
+  border-radius: 10px;
+  object-fit: cover; /* Use cover para manter o destaque sem deformar */
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Leve sombra para destacar */
+}
+
+.miniaturas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.miniatura {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: border 0.3s, transform 0.2s;
+}
+
+.miniatura:hover {
+  border-color: #bde318;
+  transform: scale(1.05);
+}
+
+.coluna-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.produto-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.produto-descricao {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.preco-container {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.preco-antigo {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 1rem;
+}
+
+.preco-novo {
+  font-weight: bold;
+  color: #121212;
+}
+
+.adicionar-btn {
+  background-color: #bde318;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.voltar-btn {
+  display: none;
+}
+
+.adicionar-btn:hover {
+  background-color: #9acb1a;
+}
+
+@media (max-width: 768px) {
+  .container-principal {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .imagem-principal {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .miniatura {
+    width: 70px;
+    height: 70px;
+  }
+
+  .coluna-direita {
+    margin-top: 1rem;
+  }
+
+  .adicionar-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
