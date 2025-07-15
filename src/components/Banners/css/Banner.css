@@ -20,6 +20,7 @@
   width: 100%;
   flex-wrap: wrap;
   background-image: url("/src/components/Banners/banner-img/background-banner.webp");
+  background-size: contain;
 }
 
 .banner-image img {
@@ -60,21 +61,3 @@
 }
 
 /* Responsividade para mobile */
-@media (max-width: 768px) {
-  .banner-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .banner-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .banner-text p {
-    font-size: 1rem;
-  }
-
-  .banner-image img {
-    max-width: 100%;
-  }
-}

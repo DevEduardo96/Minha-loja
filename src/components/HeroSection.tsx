@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
         </nav>
       </div>
 
-      <div className="hero-image glitch-wrapper">
+      <div className="hero-image glitch-wrapper" aria-hidden="true">
         {images.map((src, i) => (
           <img
             key={i}
