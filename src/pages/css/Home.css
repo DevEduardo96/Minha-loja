@@ -17,13 +17,18 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
-
+/*container Principal*/
 .container {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
   padding: 0;
-  background-color: #03f709;
+  padding-top: 0 !important;
+  background-color: black;
+}
+
+.container-secondario {
+  background-color: black;
 }
 
 /* Título */

@@ -41,7 +41,7 @@ const DetalhesProduto: React.FC = () => {
       icon: "success",
       background: "rgba(255, 255, 255, 0.9)",
       color: "#121212",
-      confirmButtonColor: "#bde318",
+      confirmButtonColor: "#03f709",
       customClass: {
         popup: "bebas-alert",
       },
@@ -49,53 +49,56 @@ const DetalhesProduto: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <Header />
+    <div className="container">
+      <div className="container-secondario">
+        <Header />
 
-      <button onClick={() => navigate(-1)} className="voltar-btn">
-        ← Voltar
-      </button>
+        <button onClick={() => navigate(-1)} className="voltar-btn">
+          ← Voltar
+        </button>
 
-      <div className="container-principal">
-        <div className="coluna-esquerda">
-          <img
-            src={imagemSelecionada}
-            alt={produto.nome}
-            className="imagem-principal"
-          />
+        <div className="container-principal">
+          <div className="coluna-esquerda">
+            <img
+              src={imagemSelecionada}
+              alt={produto.nome}
+              className="imagem-principal"
+            />
 
-          {produto.imagensExtras && produto.imagensExtras.length > 0 && (
-            <div className="miniaturas">
-              {[produto.imagem, ...produto.imagensExtras].map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Imagem extra ${index + 1}`}
-                  className="miniatura"
-                  onClick={() => setImagemSelecionada(img)}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="coluna-direita">
-          <h1 className="produto-titulo">{produto.nome}</h1>
-          <p className="produto-descricao">{produto.descricao}</p>
-
-          <div className="preco-container">
-            {produto.precoAntigo && (
-              <span className="preco-antigo">{produto.precoAntigo}</span>
+            {produto.imagensExtras && produto.imagensExtras.length > 0 && (
+              <div className="miniaturas">
+                {[produto.imagem, ...produto.imagensExtras].map(
+                  (img, index) => (
+                    <img
+                      key={index}
+                      src={img}
+                      alt={`Imagem extra ${index + 1}`}
+                      className="miniatura"
+                      onClick={() => setImagemSelecionada(img)}
+                    />
+                  )
+                )}
+              </div>
             )}
-            <span className="preco-novo">{produto.preco}</span>
           </div>
 
-          <button onClick={adicionarAoCarrinho} className="adicionar-btn">
-            Adicionar ao carrinho
-          </button>
+          <div className="coluna-direita">
+            <h1 className="produto-titulo">{produto.nome}</h1>
+            <p className="produto-descricao">{produto.descricao}</p>
+
+            <div className="preco-container">
+              {produto.precoAntigo && (
+                <span className="preco-antigo">{produto.precoAntigo}</span>
+              )}
+              <span className="preco-novo">{produto.preco}</span>
+            </div>
+
+            <button onClick={adicionarAoCarrinho} className="adicionar-btn">
+              Adicionar ao carrinho <span className="arrow">»</span>
+            </button>
+          </div>
         </div>
       </div>
-
       <WhatsAppButton />
     </div>
   );

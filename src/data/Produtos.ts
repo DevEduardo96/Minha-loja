@@ -61,7 +61,7 @@ export const produtos: Produto[] = [
   {
     id: 6,
     nome: "Novo Produto 6",
-    imagem: "./produtos-img/pasta.webp",
+    imagem: template,
     imagensExtras: [ebooksImg, ebooksImg],
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",
@@ -149,7 +149,7 @@ export const produtos: Produto[] = [
   {
     id: 14,
     nome: "Novo Produto 14",
-    imagem: "./produtos-img/pasta.webp",
+    imagem: template,
     imagensExtras: [],
     preco: "R$ 49,90",
     precoAntigo: "R$ 79,90",

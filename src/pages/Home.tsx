@@ -43,57 +43,59 @@ const Home: React.FC = () => {
 
   return (
     <div className="container">
-      <Header />
-      <HeroSection />
-      <h2
-        style={{
-          textAlign: "center",
-          fontSize: "1.8rem",
-          backgroundColor: "black",
-          color: "white",
-          padding: "1rem 2rem",
-          // width: "fit-content",
-          // margin: "2rem auto",
-        }}
-      >
-        Produtos Recomendados
-      </h2>
-      <Temporizador />
+      <div className="container-secondario">
+        <Header />
+        <HeroSection />
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "1.8rem",
+            backgroundColor: "black",
+            color: "white",
+            padding: "1rem 2rem",
+            // width: "fit-content",
+            // margin: "2rem auto",
+          }}
+        >
+          Produtos Recomendados
+        </h2>
+        <Temporizador />
 
-      <div className="produtos">
-        {produtosFiltrados.map((produto) => (
-          <div
-            key={produto.id}
-            className="produto"
-            onClick={() => navigate(`/produto/${produto.id}`)}
-            style={{ cursor: "pointer" }}
-          >
-            <h2>{produto.nome}</h2>
-            <img src={produto.imagem} alt={produto.nome} />
-            <p>{produto.descricao}</p>
-
-            <div className="preco-container">
-              {produto.precoAntigo && (
-                <span className="preco-antigo">{produto.precoAntigo}</span>
-              )}
-              <span className="preco-novo">{produto.preco}</span>
-            </div>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation(); // evita o clique no botão ativar o onClick do card
-                adicionarAoCarrinho(produto);
-              }}
+        <div className="produtos">
+          {produtosFiltrados.map((produto) => (
+            <div
+              key={produto.id}
+              className="produto"
+              onClick={() => navigate(`/produto/${produto.id}`)}
+              style={{ cursor: "pointer" }}
             >
-              ADQUIRIR
-            </button>
-          </div>
-        ))}
+              <h2>{produto.nome}</h2>
+              <img src={produto.imagem} alt={produto.nome} />
+              <p>{produto.descricao}</p>
+
+              <div className="preco-container">
+                {produto.precoAntigo && (
+                  <span className="preco-antigo">{produto.precoAntigo}</span>
+                )}
+                <span className="preco-novo">{produto.preco}</span>
+              </div>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // evita o clique no botão ativar o onClick do card
+                  adicionarAoCarrinho(produto);
+                }}
+              >
+                ADQUIRIR
+              </button>
+            </div>
+          ))}
+        </div>
+        <Banner02 />
+        <Banner />
+        <Banner02 />
+        <WhatsAppButton />
       </div>
-      <Banner02 />
-      <Banner />
-      <Banner02 />
-      <WhatsAppButton />
     </div>
   );
 };

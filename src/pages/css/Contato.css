@@ -6,9 +6,21 @@
   --cinza: #323337;
   --cinzaclaro: #c5c5c5;
 }
-/* Container principal */
+
+/*container Principal*/
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container-secondario {
+  background-color: black !important;
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
 .container-menu {
-  padding: 2rem;
   background-color: black;
   background-size: cover;
   min-height: 100vh;

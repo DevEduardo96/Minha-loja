@@ -59,105 +59,107 @@ const Produtos: React.FC = () => {
 
   return (
     <div className="container">
-      <Header />
-      <SliderProdutos />
+      <div className="container-secondario">
+        <Header />
+        <SliderProdutos />
 
-      <div
-        className="categorias-menu"
-        style={{
-          display: "flex",
-          gap: "0.5rem",
-          flexWrap: "nowrap",
-          overflowX: "auto",
-          padding: "1rem",
-          margin: "1.5rem 0",
-          justifyContent: "center",
-          backgroundColor: "#121212",
-        }}
-      >
-        {categorias.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => mudarCategoria(cat)}
-            style={{
-              whiteSpace: "nowrap",
-              flexShrink: 0,
-              padding: "0.5rem 1rem",
-              borderRadius: "20px",
-              border: "none",
-              backgroundColor:
-                categoriaSelecionada === cat ? "#03f709" : "#333",
-              color: categoriaSelecionada === cat ? "#121212" : "#fff",
-              cursor: "pointer",
-              fontWeight: "bold",
-              fontSize: "0.9rem",
-            }}
-          >
-            {cat.toUpperCase()}
-          </button>
-        ))}
-      </div>
-
-      <Temporizador />
-
-      <div className="produtos">
-        {produtosPaginados.map((produto) => (
-          <div
-            key={produto.id}
-            className="produto"
-            onClick={() => navigate(`/produto/${produto.id}`)}
-            style={{ cursor: "pointer" }}
-          >
-            <h2>{produto.nome}</h2>
-            <img src={produto.imagem} alt={produto.nome} />
-            <p>{produto.descricao}</p>
-            <div className="preco-container">
-              {produto.precoAntigo && (
-                <span className="preco-antigo">{produto.precoAntigo}</span>
-              )}
-              <span className="preco-novo">{produto.preco}</span>
-            </div>
+        <div
+          className="categorias-menu"
+          style={{
+            display: "flex",
+            gap: "0.5rem",
+            flexWrap: "nowrap",
+            overflowX: "auto",
+            padding: "1rem",
+            margin: "1.5rem 0",
+            justifyContent: "center",
+            backgroundColor: "#121212",
+          }}
+        >
+          {categorias.map((cat) => (
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                adicionarAoCarrinho(produto);
+              key={cat}
+              onClick={() => mudarCategoria(cat)}
+              style={{
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+                padding: "0.5rem 1rem",
+                borderRadius: "20px",
+                border: "none",
+                backgroundColor:
+                  categoriaSelecionada === cat ? "#03f709" : "#333",
+                color: categoriaSelecionada === cat ? "#121212" : "#fff",
+                cursor: "pointer",
+                fontWeight: "bold",
+                fontSize: "0.9rem",
               }}
             >
-              Adquirir
+              {cat.toUpperCase()}
             </button>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "2rem",
-          gap: "0.5rem",
-          flexWrap: "wrap",
-        }}
-      >
-        {Array.from({ length: totalPaginas }, (_, i) => (
-          <button
-            key={i + 1}
-            onClick={() => setPaginaAtual(i + 1)}
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: paginaAtual === i + 1 ? "#03f709" : "#333",
-              color: paginaAtual === i + 1 ? "#121212" : "#fff",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontWeight: "bold",
-            }}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+        <Temporizador />
 
-      <WhatsAppButton />
+        <div className="produtos">
+          {produtosPaginados.map((produto) => (
+            <div
+              key={produto.id}
+              className="produto"
+              onClick={() => navigate(`/produto/${produto.id}`)}
+              style={{ cursor: "pointer" }}
+            >
+              <h2>{produto.nome}</h2>
+              <img src={produto.imagem} alt={produto.nome} />
+              <p>{produto.descricao}</p>
+              <div className="preco-container">
+                {produto.precoAntigo && (
+                  <span className="preco-antigo">{produto.precoAntigo}</span>
+                )}
+                <span className="preco-novo">{produto.preco}</span>
+              </div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  adicionarAoCarrinho(produto);
+                }}
+              >
+                Adquirir
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "2rem",
+            gap: "0.5rem",
+            flexWrap: "wrap",
+          }}
+        >
+          {Array.from({ length: totalPaginas }, (_, i) => (
+            <button
+              key={i + 1}
+              onClick={() => setPaginaAtual(i + 1)}
+              style={{
+                padding: "0.5rem 1rem",
+                backgroundColor: paginaAtual === i + 1 ? "#03f709" : "#333",
+                color: paginaAtual === i + 1 ? "#121212" : "#fff",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontWeight: "bold",
+              }}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+
+        <WhatsAppButton />
+      </div>
     </div>
   );
 };

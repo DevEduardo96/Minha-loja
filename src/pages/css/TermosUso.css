@@ -1,16 +1,38 @@
+:root {
+  --verde: #03f709;
+  --preto: #0c0d11;
+  --vermelho: #fc2e2e;
+  --branco: #ffffff;
+  --cinza: #323337;
+  --cinzaclaro: #c5c5c5;
+  --neon-glow: rgba(0, 255, 144, 0.3);
+}
 /* Container principal com fundo */
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
+.container-secondario {
+  background-color: black !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0;
+}
 .container-termos {
-  background-image: url("/src/assets/background/background.png");
   background-size: cover;
   background-position: center;
-  padding: 2rem 1rem;
+  background-color: black;
 }
 
 /* Caixa de conteúdo dos termos */
 .termos-container {
   max-width: 800px;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--preto);
   color: #121212;
   line-height: 1.7;
   font-size: 1.1rem;
@@ -25,7 +47,7 @@
 /* Título principal */
 .termos-container h2 {
   font-size: 2rem;
-  color: #bde318;
+  color: #03f709;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -33,7 +55,7 @@
 /* Subtítulos */
 .termos-container h3 {
   font-size: 1.4rem;
-  color: #333;
+  color: #ffffff;
   margin-top: 2rem;
   margin-bottom: 0.8rem;
 }
@@ -42,7 +64,7 @@
 .termos-container p,
 .termos-container li {
   margin-bottom: 1rem;
-  color: #444;
+  color: #808080;
 }
 
 /* Listas */

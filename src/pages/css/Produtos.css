@@ -8,10 +8,18 @@
   --neon-glow: rgba(0, 255, 144, 0.3);
 }
 
+/*container Principal*/
 .container {
-  background-color: var(--preto);
-  min-height: 100vh;
-  padding-bottom: 3rem;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container-secondario {
+  background-color: black !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Grade dos produtos */
@@ -126,4 +134,8 @@
 .categorias-menu::-webkit-scrollbar-thumb {
   background: var(--verde);
   border-radius: 10px;
+}
+
+.categorias-menu {
+  background-color: black !important;
 }
