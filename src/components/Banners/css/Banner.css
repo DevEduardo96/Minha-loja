@@ -35,7 +35,8 @@
   flex: 1;
   padding: 10px;
   min-width: 280px;
-  background-color: #ffffff;
+  background-color: var(--preto);
+  border: solid 1px #9b9b9b;
   border-radius: 20px;
 }
 
@@ -46,13 +47,13 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
   font-weight: 800;
-  color: #03f709;
+  color: #ffffff;
   padding-bottom: 2px;
 }
 
 .banner-text p {
   font-size: 1.25rem;
-  color: #383838;
+  color: #c5c5c5;
   line-height: 1.6;
   font-family: "Open Sans", sans-serif;
   padding: 1rem;

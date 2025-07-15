@@ -34,7 +34,7 @@ const Home: React.FC = () => {
       icon: "success",
       background: "rgba(255, 255, 255, 0.884)",
       color: "#121212",
-      confirmButtonColor: "#03f709;",
+      confirmButtonColor: "#03f709",
       customClass: {
         popup: "bebas-alert",
       },

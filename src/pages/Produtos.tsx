@@ -32,7 +32,7 @@ const Produtos: React.FC = () => {
       icon: "success",
       background: "rgba(255, 255, 255, 0.884)",
       color: "#121212",
-      confirmButtonColor: "#bde318",
+      confirmButtonColor: "#03f709",
       customClass: {
         popup: "bebas-alert",
       },
@@ -86,7 +86,7 @@ const Produtos: React.FC = () => {
               borderRadius: "20px",
               border: "none",
               backgroundColor:
-                categoriaSelecionada === cat ? "#bde318" : "#333",
+                categoriaSelecionada === cat ? "#03f709" : "#333",
               color: categoriaSelecionada === cat ? "#121212" : "#fff",
               cursor: "pointer",
               fontWeight: "bold",
@@ -144,7 +144,7 @@ const Produtos: React.FC = () => {
             onClick={() => setPaginaAtual(i + 1)}
             style={{
               padding: "0.5rem 1rem",
-              backgroundColor: paginaAtual === i + 1 ? "#bde318" : "#333",
+              backgroundColor: paginaAtual === i + 1 ? "#03f709" : "#333",
               color: paginaAtual === i + 1 ? "#121212" : "#fff",
               border: "none",
               borderRadius: "8px",

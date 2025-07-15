@@ -15,7 +15,6 @@
   height: 100vh;
   background-color: var(--preto);
   border: solid 3px var(--preto);
-  color: var(--cinzaclaro);
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   font-family: "Bebas Neue", sans-serif;
   padding: 1rem;
@@ -39,10 +38,12 @@
   text-align: center;
   background-color: var(--verde);
   border-radius: 20px;
+  color: black;
 }
 
 .cart-side-menu p {
   text-align: center;
+  color: var(--cinzaclaro);
 }
 
 .overlay {
@@ -82,6 +83,67 @@
   flex: 1;
 }
 
+.item-carrinho {
+  display: flex;
+  gap: 1rem;
+  background-color: #121212;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 255, 144, 0.1);
+}
+
+.item-carrinho img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info-carrinho {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.info-carrinho h4 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: #bde318;
+}
+
+.info-carrinho p {
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+  line-height: 1.3;
+  max-height: 3.2rem; /* limita a altura da descrição */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* mostra no máximo 3 linhas */
+  -webkit-box-orient: vertical;
+  color: #ccc;
+}
+
+.info-carrinho strong {
+  color: #ffffff;
+}
+
+.remover {
+  background: transparent;
+  color: #fc2e2e;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  align-self: flex-start;
+}
+
 .remover {
   margin-top: 0.5rem;
   background-color: transparent;
@@ -91,6 +153,7 @@
   font-size: 0.85rem;
   cursor: pointer;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .remover:hover {
@@ -145,4 +208,45 @@
   color: white;
   border-radius: 10px;
   padding: 10px;
+}
+/* X voltar */
+.close-btn svg {
+  color: #03f709;
+}
+
+.quantidade-controles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.quantidade-controles button {
+  background-color: #1c1c1c;
+  color: #03f709;
+  border: 1px solid #03f709;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantidade-controles button:hover {
+  background-color: #03f709;
+  color: #121212;
+  transform: scale(1.1);
+}
+
+.quantidade-controles span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  min-width: 24px;
+  text-align: center;
 }

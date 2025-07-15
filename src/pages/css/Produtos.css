@@ -1,56 +1,73 @@
-.container {
-  background-color: black;
-}
-.produtos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  justify-content: center;
+:root {
+  --verde: #03f709;
+  --preto: #0c0d11;
+  --vermelho: #fc2e2e;
+  --branco: #ffffff;
+  --cinza: #323337;
+  --cinzaclaro: #c5c5c5;
+  --neon-glow: rgba(0, 255, 144, 0.3);
 }
 
+.container {
+  background-color: var(--preto);
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+/* Grade dos produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Card do produto */
 .produto {
-  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
-  color: #fff;
+  background: rgba(25, 25, 25, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 144, 0.08);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 30px var(--neon-glow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  text-align: center;
-  position: relative;
+  justify-content: space-between;
 }
 
 .produto:hover {
-  transform: scale(1.03);
-  box-shadow: 0 18px 40px rgba(0, 255, 100, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 255, 144, 0.5);
 }
 
 .produto img {
   width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 12px;
+  max-height: 280px;
   object-fit: cover;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 15px #03f707a9;
+  border-bottom: 1px solid #333;
+  transition: transform 0.4s ease;
+}
+.produto:hover img {
+  transform: scale(1.05);
 }
 
 .produto h2 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #03f709;
+  font-size: 1.6rem;
+  color: var(--branco);
+  margin: 1rem 1rem 0.5rem;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .produto p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #ccc;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem;
   font-family: "Open Sans", sans-serif;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .preco-container {
@@ -63,35 +80,43 @@
 
 .preco-antigo {
   text-decoration: line-through;
-  color: #ff4c4c !important;
+  color: #ff4c4c;
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .preco-novo {
-  color: #ffffff !important;
-  font-size: 1.2rem;
+  color: #03f709;
+  font-size: 1.3rem;
   font-weight: bold;
+  text-shadow: 0 0 4px #03f709;
 }
 
+/* Botão do card */
 .produto button {
-  background: #03f709;
-  color: #121212;
-  padding: 0.7rem 1.4rem;
+  background: linear-gradient(135deg, #03f709, #8fc600);
+  color: #0e0e0e;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
+  margin: 1rem auto 1.5rem;
   font-family: "Open Sans", sans-serif;
-  box-shadow: 0 0 12px rgba(189, 227, 24, 0.3);
+  box-shadow: 0 4px 14px rgba(189, 227, 24, 0.35),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 1px #d5ff00;
 }
 
 .produto button:hover {
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff, #e4ffe6);
   color: #121212;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.4), 0 0 8px #03f709;
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* Categoria menu (mantido) */
@@ -99,6 +124,6 @@
   height: 6px;
 }
 .categorias-menu::-webkit-scrollbar-thumb {
-  background: #03f709;
+  background: var(--verde);
   border-radius: 10px;
 }
