@@ -1,6 +1,10 @@
 :root {
-  --verde: #bde318;
-  --preto: #121212;
+  --verde: #03f709;
+  --preto: #12141f;
+  --vermelho: #fc2e2e;
+  --branco: white;
+  --cinza: #323337;
+  --cinzaclaro: #c5c5c5;
 }
 
 .cart-side-menu {
@@ -9,9 +13,9 @@
   top: 0;
   width: 25rem;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.95);
+  background-color: var(--preto);
   border: solid 3px var(--preto);
-  color: var(--preto);
+  color: var(--cinzaclaro);
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   font-family: "Bebas Neue", sans-serif;
   padding: 1rem;

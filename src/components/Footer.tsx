@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white py-6 mt-10">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div className="footer-container">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Artfix. Todos os direitos
           reservados.

@@ -1,22 +1,40 @@
 :root {
-  --verde: #bde318;
-  --preto: #121212;
+  --verde: #03f709;
+  --preto: #0c0d11;
   --vermelho: #fc2e2e;
+  --branco: white;
+  --cinza: #323337;
+  --cinzaclaro: #c5c5c5;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000;
+  color: var(--preto);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  background-color: #03f709;
 }
 
+/* Título */
 h1 {
   text-align: center;
   margin-bottom: 2rem;
   color: #222;
   font-size: 2rem;
 }
+
+/* Produto */
 .produto {
   border: solid 2px var(--preto);
   border-radius: 16px;
@@ -26,12 +44,11 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff;
+  background-color: var(--cinza);
   height: 100%;
 }
 
 .produto:hover {
-  background-color: #e8ffb8;
   transform: translateY(-5px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
 }
@@ -57,8 +74,7 @@ h1 {
   color: #333;
   font-size: 0.95rem;
   text-align: center;
-
-  max-height: 3rem; /* limita altura da descrição */
+  max-height: 3rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -76,7 +92,7 @@ h1 {
 }
 
 .preco-antigo {
-  color: #fc2e2e;
+  color: var(--vermelho);
   text-decoration: line-through;
   font-size: 0.95rem;
 }
@@ -106,40 +122,44 @@ h1 {
 
 .produto button {
   background-color: var(--preto);
-  color: var(--verde);
+  color: #ffffff;
   font-family: "Bebas Neue", sans-serif;
   font-size: 20px;
-  border: none;
+  border: solid 2px white;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
   margin: 0 1rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .produto button:hover {
-  background-color: #000;
+  background-color: #03f709;
+  border: solid 2px white;
+  color: #000;
 }
 
+/* Grid de produtos 100% largura */
 .produtos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
 }
 
-/* ==== RESPONSIVIDADE AJUSTADA ==== */
+/* RESPONSIVO */
 
-/* Tablets */
-@media (max-width: 900px) {
-  .container {
-    padding: 1rem;
+@media (max-width: 1100px) {
+  .produtos {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Celulares maiores */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .produtos {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
@@ -158,21 +178,17 @@ h1 {
   .preco-novo {
     font-size: 1rem;
   }
+
+  .produto button {
+    font-size: 18px;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
-/* Celulares pequenos (FORÇA 2 COLUNAS) */
 @media (max-width: 480px) {
   .produtos {
-    grid-template-columns: repeat(2, 1fr); /* ← força 2 colunas */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-  }
-
-  .container {
-    padding: 0.8rem;
-  }
-
-  .produto {
-    min-height: auto;
   }
 
   .produto h2 {
@@ -187,10 +203,17 @@ h1 {
     font-size: 0.95rem;
   }
 
-  .produto button {
-    font-size: 18px;
-    padding: 0.4rem 0.8rem;
+  .categorias-menu button {
+    font-size: 8px !important;
   }
+}
+
+@media (max-width: 393px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   .categorias-menu button {
     font-size: 8px !important;
   }
@@ -198,14 +221,4 @@ h1 {
 
 .categorias-menu {
   border-radius: 20px;
-}
-
-@media (max-width: 393px) {
-  .produtos {
-    grid-template-columns: repeat(2, 1fr); /* ← força 2 colunas */
-    gap: 1rem;
-  }
-  .categorias-menu button {
-    font-size: 8px !important;
-  }
 }

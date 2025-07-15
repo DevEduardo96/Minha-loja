@@ -39,14 +39,12 @@ const Produtos: React.FC = () => {
     });
   };
 
-  // 🔍 Filtrar produtos por categoria
   const produtosFiltrados = produtos.filter((produto) =>
     categoriaSelecionada === "todos"
       ? true
       : produto.categoria === categoriaSelecionada
   );
 
-  // 📄 Paginação
   const totalPaginas = Math.ceil(produtosFiltrados.length / itensPorPagina);
   const indiceInicial = (paginaAtual - 1) * itensPorPagina;
   const produtosPaginados = produtosFiltrados.slice(
@@ -64,7 +62,6 @@ const Produtos: React.FC = () => {
       <Header />
       <SliderProdutos />
 
-      {/* Menu de Categorias */}
       <div
         className="categorias-menu"
         style={{
@@ -103,7 +100,6 @@ const Produtos: React.FC = () => {
 
       <Temporizador />
 
-      {/* Lista de Produtos */}
       <div className="produtos">
         {produtosPaginados.map((produto) => (
           <div
@@ -123,7 +119,7 @@ const Produtos: React.FC = () => {
             </div>
             <button
               onClick={(e) => {
-                e.stopPropagation(); // evita navegação ao clicar no botão
+                e.stopPropagation();
                 adicionarAoCarrinho(produto);
               }}
             >
@@ -133,7 +129,6 @@ const Produtos: React.FC = () => {
         ))}
       </div>
 
-      {/* Paginação */}
       <div
         style={{
           display: "flex",

@@ -94,7 +94,9 @@ const Contato: React.FC = () => {
               rows={5}
               required
             ></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit">
+              Enviar<span className="arrow">»</span>
+            </button>
           </form>
         </div>
       </div>

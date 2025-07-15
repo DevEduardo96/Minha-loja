@@ -5,7 +5,7 @@
 }
 
 .oferta-banner {
-  background-color: var(--vermelho); /* rosa vibrante */
+  background-color: black;
   padding: 2rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   color: white;
   font-size: 2rem;
   font-weight: bold;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .botao-oferta {
@@ -32,7 +32,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -40,8 +40,8 @@
 }
 
 .botao-oferta:hover {
-  background-color: white;
-  color: var(--preto);
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 .seta {

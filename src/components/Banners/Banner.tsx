@@ -1,12 +1,12 @@
 import "./css/Banner.css";
-import menino from "./banner-img/menino.webp";
+import estatua from "./banner-img/estatua.png";
 
 const Banner = () => {
   return (
     <section className="banner">
       <div className="banner-container">
         <div className="banner-image">
-          <img src={menino} />
+          <img className="img-estatua" src={estatua} />
         </div>
         <div className="banner-text">
           <h1>O que é a Artfix?</h1>

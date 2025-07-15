@@ -2,7 +2,6 @@ import React from "react";
 import { produtos } from "../data/Produtos";
 import "./css/Home.css";
 import Header from "../components/Header";
-import Temporizador from "../components/Temporizador";
 import HeroSection from "../components/HeroSection";
 import { useNavigate } from "react-router-dom"; // Importa aqui
 
@@ -11,6 +10,7 @@ import Swal from "sweetalert2";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Banner from "../components/Banners/Banner";
 import Banner02 from "../components/Banners/Banner02";
+import Temporizador from "../components/Temporizador";
 
 const Home: React.FC = () => {
   const navigate = useNavigate(); // Use dentro do componente
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
       icon: "success",
       background: "rgba(255, 255, 255, 0.884)",
       color: "#121212",
-      confirmButtonColor: "#bde318",
+      confirmButtonColor: "#03f709;",
       customClass: {
         popup: "bebas-alert",
       },
@@ -45,14 +45,12 @@ const Home: React.FC = () => {
     <div className="container">
       <Header />
       <HeroSection />
-
       <h2
         style={{
           textAlign: "center",
           fontSize: "1.8rem",
           backgroundColor: "black",
           color: "white",
-          borderRadius: "20px",
           padding: "1rem 2rem",
           // width: "fit-content",
           // margin: "2rem auto",
@@ -60,8 +58,8 @@ const Home: React.FC = () => {
       >
         Produtos Recomendados
       </h2>
-
       <Temporizador />
+
       <div className="produtos">
         {produtosFiltrados.map((produto) => (
           <div
@@ -92,7 +90,7 @@ const Home: React.FC = () => {
           </div>
         ))}
       </div>
-
+      <Banner02 />
       <Banner />
       <Banner02 />
       <WhatsAppButton />

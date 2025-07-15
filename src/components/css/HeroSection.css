@@ -1,14 +1,20 @@
 :root {
-  --verde: #bde318;
-  --preto: #121212;
+  --verde: #03f709;
+  --preto: #0c0d11;
   --vermelho: #fc2e2e;
+  --branco: white;
+  --cinza: #323337;
+  --cinzaclaro: #c5c5c5;
 }
-
 .hero-container {
+  width: 100%;
+  max-width: 1400px; /* alterado de 1319px */
+  height: 900px;
+  margin: 0 auto;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 2rem;
   flex-wrap: wrap;
   background-image: url("/src/assets/background/background02.webp");
   background-size: cover;
@@ -16,24 +22,21 @@
   background-repeat: no-repeat;
   gap: 2rem;
   padding-bottom: 1px;
-  border-radius: 20px;
 }
 
 .hero-text {
-  flex: 1;
+  flex: 0.9;
   max-width: 600px;
   text-align: left;
   padding: 1rem;
-  background-color: #fff;
   border-radius: 1rem;
-  border: solid 5px #bee31886;
 }
 
 .hero-text h1 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 4rem;
   font-weight: 800;
-  background-color: var(--vermelho);
+  background-color: #ffffff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
@@ -44,7 +47,7 @@
 }
 
 .hero-text p {
-  color: #383838;
+  color: #9b9b9b;
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -57,7 +60,7 @@
   border: 2px solid #ffffff;
   border-radius: 12px;
   color: #ffffff;
-  background-color: #fc2e2e;
+  background-color: #03f709;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 1rem;
@@ -82,103 +85,69 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-width: 0;
 }
 
 .hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 0;
+}
+/*efeito glicth*/
+.glitch-wrapper {
+  position: relative;
+  width: 100%;
   max-width: 100%;
   height: auto;
-  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glitch-img {
+  position: absolute;
+  max-width: 100%;
+  height: 600px; /* manter altura uniforme */
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 30ms ease-in-out; /* antes: 9ms */
+}
+
+.glitch-img.active {
+  opacity: 1;
 }
 
 /* Responsividade */
-@media (max-width: 760px) {
-  .hero-text h1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin: 0 0 1rem 0;
-    line-height: 1.2;
-    text-align: left;
-    padding: 10px;
-  }
-  .hero-text p {
-    color: rgb(113, 197, 17);
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    max-width: 400px;
+@media (max-width: 1320px) {
+  .hero-container {
+    width: 100%;
+    height: auto;
   }
 }
-
 @media (max-width: 480px) {
-  .hero-container {
-    flex-direction: column;
-    padding: 0;
-    text-align: center;
-    gap: 0;
-  }
-
-  .hero-text {
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 1rem;
-  }
-
-  .hero-text h1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #2e3b4e;
-    line-height: 1.2;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 5px solid #525b68;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .hero-text p {
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.875rem; /* 14px */
-    color: #333;
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-  }
-
-  .hero-button {
-    padding: 0.75rem 1.2rem;
-    font-size: 0.9rem;
-    border-radius: 12px;
-    display: inline-block;
-    border: 2px solid #121212;
-    background-color: #fc2e2e;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .hero-button:hover {
-    background-color: #121212;
-    color: #fff;
-  }
-
   .hero-image {
     order: -1;
-    padding: 0px !important;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .hero-image img {
+  .hero-image img,
+  .glitch-img {
+    width: 100%;
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    object-fit: contain;
   }
 
-  .hero-paragrafo,
-  .hero-titulo {
-    border-radius: 12px;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 0.875rem;
+  .glitch-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }

@@ -1,3 +1,11 @@
+:root {
+  --verde: #03f709;
+  --preto: #0c0d11;
+  --vermelho: #fc2e2e;
+  --branco: white;
+  --cinza: #323337;
+  --cinzaclaro: #c5c5c5;
+}
 .temporizador {
   background-color: #121212;
   color: white;
@@ -9,14 +17,14 @@
   font-family: "Segoe UI", Tahoma, sans-serif;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: 0 0 10px rgba(189, 227, 24, 0.3);
-  border: 2px solid #bde318;
+  box-shadow: 0 0 10px #03f7073d;
+  border: 2px solid #03f709;
   margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
 .temporizador .titulo {
-  color: #bde318;
+  color: #f7f303;
   letter-spacing: 1px;
 }
 
