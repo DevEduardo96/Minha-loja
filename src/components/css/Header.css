@@ -200,7 +200,9 @@
   .menu-toggle {
     display: block;
   }
-
+  .logo img {
+    height: 5rem;
+  }
   .nav-links {
     display: none;
   }

@@ -124,9 +124,9 @@
   .hero-container {
     flex-direction: column;
     text-align: center;
-    padding: 2rem 1rem;
     gap: 1.5rem;
-    background-image: none;
+    background-image: url("../Banners/banner-img/background-banner-mobile.webp");
+    background-size: cover;
   }
 
   .hero-image {
@@ -137,6 +137,12 @@
     order: 1;
     max-width: 100%;
     padding: 0;
+  }
+
+  .produtos {
+    background-color: #0c0d11 !important;
+    padding: 0 !important;
+    border-radius: 20px !important;
   }
 
   .hero-text h1 {

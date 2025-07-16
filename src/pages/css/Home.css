@@ -163,6 +163,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
   .produtos {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
